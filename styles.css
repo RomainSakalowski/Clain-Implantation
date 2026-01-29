@@ -1,0 +1,1583 @@
+/* =========================
+   Clain Implantation Theme
+   Duck teal + white line art + textured cream cards
+   Version "plus claire" (même palette / mêmes polices / même structure)
+   ========================= */
+
+   :root{
+    /* Palette inspirée de ta boîte */
+    --teal-950: #071a1c;
+    --teal-900: #0b2326;
+    --teal-850: #0f2f33;
+    --teal-800: #133a3f;
+    --teal-700: #1b4a50;
+  
+    --cream-50:  #fbf6eb;
+    --cream-100: #f5eddc;
+    --cream-200: #efe3cc;
+  
+    --ink: #081213;           /* texte sur crème */
+    --text-on-teal: #f7fbfb;  /* texte sur fond canard */
+  
+    /* Traits : un poil plus présents mais toujours doux */
+    --line: rgba(255,255,255,0.26);
+    --line-soft: rgba(255,255,255,0.16);
+  
+    /* Ombres allégées (rend le site plus "clair") */
+    --shadow: 0 16px 40px rgba(0,0,0,0.34);
+  
+    --radius: 18px;
+  
+    --accent: rgba(255,255,255,0.86);
+    --accent-2: rgba(255,255,255,0.18);
+  
+    /* Grain un poil plus discret */
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+  
+    /* ===== Variables de “clarté” ===== */
+    --glass-1: rgba(255,255,255,0.09);
+    --glass-2: rgba(255,255,255,0.06);
+    --glass-hover: rgba(255,255,255,0.12);
+  
+    --card-shadow: 0 14px 34px rgba(0,0,0,0.22);
+    --card-border: rgba(8,18,19,0.13);
+  
+    --muted-on-teal: rgba(247,251,251,0.78);
+    --muted-on-cream: rgba(8,18,19,0.78);
+  }
+  
+  *{ box-sizing: border-box; }
+  html, body{ height: 100%; }
+  html{ scroll-behavior: smooth; }
+  
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    color: var(--text-on-teal);
+    background: #1a4a4a;
+  }
+  
+  .container{
+    width: min(1120px, 92vw);
+    margin: 0 auto;
+  }
+  
+  /* =========================
+     Header (canard + traits blancs)
+     ========================= */
+  .site-header{
+    border-bottom: 1px solid var(--line-soft);
+    background: linear-gradient(180deg, rgba(7,26,28,0.62), rgba(7,26,28,0.28));
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1000;
+    padding: 9px 0;
+  }
+  
+  /* Header en 3 zones : gauche / centre / droite */
+  .header-inner{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* gauche | centre | droite */
+    align-items: center;
+    gap: 16px;
+  }
+  
+  /* Zone logo */
+  .brand-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+    justify-self: start;
+  }
+  
+  .brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  
+  /* Tagline (au centre) */
+  .tagline{
+    justify-self: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: rgba(247,251,251,0.78);
+  }
+  
+  /* Menu à droite */
+  .menu{
+    position: relative;
+    justify-self: end;
+  }
+  
+  .menu-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--glass-2);
+    color: var(--text-on-teal);
+    font-weight: 800;
+    cursor: pointer;
+    user-select: none;
+  }
+  .menu-btn:hover{ background: var(--glass-hover); }
+  .chev{ opacity: 0.9; transform: translateY(-1px); }
+  
+  .menu-list{
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 290px;
+    display: none;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background:
+      var(--grain),
+      linear-gradient(180deg, rgba(11,35,38,0.92), rgba(7,26,28,0.86));
+    box-shadow: var(--shadow);
+    z-index: 1100;
+  }
+  .menu-list.open{ display: grid; }
+  
+  .menu-list a{
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-on-teal);
+    border: 1px solid transparent;
+    font-weight: 650;
+    display: block;
+    width: 100%;
+  }
+  .menu-list a:hover{
+    background: rgba(255,255,255,0.09);
+    border-color: rgba(255,255,255,0.12);
+  }
+  
+  /* =========================
+     Badge logo (VERSION UNIQUE, compacte)
+     ========================= */
+  .site-header .brand-badge{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1px 3px;
+    border-radius: 6px;
+    align-self: start;
+  
+    background:
+      var(--grain),
+      linear-gradient(180deg, var(--cream-50), var(--cream-100));
+  
+    border: 1px solid rgba(8,18,19,0.14);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+    text-decoration: none;
+    line-height: 0;
+    transform: translateZ(0);
+  }
+  
+  .site-header .brand-badge:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.26);
+  }
+  
+  .brand-logo-inline{
+    display: inline-flex;
+    height: 56px;
+    width: auto;
+    overflow: hidden;
+    line-height: 0;
+  }
+  
+  .brand-logo-img{
+    height: 100%;
+    width: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center 90%;
+    transform: scale(1.45);
+    transform-origin: center;
+  }
+  
+  .sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  @media (max-width: 760px){
+    .header-inner{
+      grid-template-columns: 1fr;
+      justify-items: center;
+      row-gap: 10px;
+    }
+    .brand-wrap{ justify-self: center; }
+    .menu{ justify-self: center; }
+  }
+  
+  @media (max-width: 600px){
+    .site-header .brand-badge{
+      padding: 1px 2px;
+      border-radius: 6px;
+    }
+  }
+  
+  /* =========================
+     Bouton devis flottant
+     ========================= */
+  .floating-quote{
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 50;
+  
+    text-decoration: none;
+    color: var(--text-on-teal);
+    font-weight: 900;
+    letter-spacing: 0.2px;
+  
+    padding: 12px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background:
+      var(--grain),
+      linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.08));
+    box-shadow: 0 14px 32px rgba(0,0,0,0.34);
+  }
+  .floating-quote:hover{ transform: translateY(-1px); filter: saturate(1.05); }
+  .floating-quote:focus-visible{
+    outline: 3px solid rgba(255,255,255,0.25);
+    outline-offset: 3px;
+  }
+  
+  /* =========================
+     Hero
+     ========================= */
+  .hero{ padding: 26px 0 10px; }
+  
+  .hero-inner{
+    display: grid;
+    grid-template-columns: 1fr; /* mobile */
+    gap: 22px;
+    align-items: start;
+  
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+    background:
+      var(--grain),
+      linear-gradient(180deg, var(--glass-1), var(--glass-2));
+    box-shadow: var(--shadow);
+    padding: 18px;
+  }
+  
+  /* Desktop/tablette : texte à gauche, image à droite (pages autres que home) */
+  @media (min-width: 768px){
+    .hero-inner{
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+  }
+  
+  .hero h2{
+    margin: 0 0 8px;
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    letter-spacing: 0.3px;
+    color: var(--text-on-teal);
+  }
+  
+  .hero p{
+    color: var(--muted-on-teal);
+    line-height: 1.6;
+    max-width: 80ch;
+  }
+  
+  /* Texte : couleur + espacements */
+  .hero-text{
+    color: var(--muted-on-teal);
+    max-width: 80ch;
+  }
+  
+  .hero-text p{
+    margin: 0 0 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .hero-text .intro,
+  .hero-text .highlight{
+    font-weight: 700;
+    color: var(--text-on-teal);
+  }
+  
+  .hero-text .footer-text{
+    font-weight: 500;
+  }
+  
+  /* Colonne image (carte) */
+  .hero-art{
+    justify-self: end;
+    align-self: start;
+    max-width: 420px;
+    width: 100%;
+  
+    border-radius: calc(var(--radius) - 6px);
+    border: 1px solid var(--line-soft);
+    overflow: hidden;
+    background:
+      var(--grain),
+      linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  }
+  
+  .hero-art .bizcard-img{
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    display: block;
+    object-fit: cover;
+  }
+  
+  /* =========================
+     Boutons “trait blanc”
+     ========================= */
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--glass-2);
+    color: var(--text-on-teal);
+    text-decoration: none;
+    font-weight: 850;
+  }
+  .btn:hover{ background: var(--glass-hover); }
+  
+  .btn.primary{
+    color: var(--ink);
+    border-color: rgba(8,18,19,0.16);
+    background:
+      var(--grain),
+      linear-gradient(180deg, rgba(251,246,235,1), rgba(245,237,220,1));
+  }
+  .btn.primary:hover{ filter: contrast(1.02); }
+  
+  /* =========================
+     Sections
+     ========================= */
+  .section{ padding: 16px 0 10px; }
+  .section-head{ text-align: center; margin: 16px 0 6px; }
+  
+  .section-title{
+    margin: 0;
+    font-size: 1.25rem;
+    letter-spacing: 0.2px;
+    color: var(--text-on-teal);
+  }
+  
+  .section-subtitle{
+    margin: 8px auto 0;
+    max-width: 80ch;
+    color: var(--muted-on-teal);
+    line-height: 1.55;
+  }
+  
+  /* =========================
+     Cards : crème texturé
+     ========================= */
+  .grid{
+    padding: 14px 0 44px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 14px;
+  }
+  
+  .card{
+    grid-column: span 12;
+    padding: 16px;
+  
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+  
+    background:
+      var(--grain),
+      radial-gradient(650px 220px at 10% 0%, rgba(255,255,255,0.80), transparent 60%),
+      linear-gradient(180deg, var(--cream-50),#f4f3ef);
+  
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+  }
+  
+  @media (min-width: 860px){
+    .card.half{ grid-column: span 6; }
+    .card.third{ grid-column: span 4; }
+  }
+  
+  .card h3{
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    color: var(--ink);
+    letter-spacing: 0.2px;
+  }
+  .card p{
+    margin: 0;
+    color: var(--muted-on-cream);
+    line-height: 1.55;
+  }
+  
+  /* Vignettes */
+  .thumb{
+    height: 220px;
+    border-radius: 14px;
+    border: 1px solid rgba(8,18,19,0.15);
+    overflow: hidden;
+    margin-bottom: 10px;
+  
+    background:
+      var(--grain),
+      linear-gradient(180deg, rgba(11,35,38,0.90), rgba(15,47,51,0.90));
+    display: grid;
+    place-items: center;
+  }
+  .thumb{
+    position: relative;
+    overflow: hidden;
+  }
+  .thumb img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* =========================
+     Forms (sur fond crème)
+     ========================= */
+  .form{ display: grid; gap: 12px; }
+  .field{ display: grid; gap: 8px; }
+  
+  label{
+    font-weight: 750;
+    color: rgba(8,18,19,0.90);
+  }
+  
+  input, select, textarea{
+    width: 100%;
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(8,18,19,0.16);
+  
+    background:
+      var(--grain),
+      linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.46));
+  
+    color: var(--ink);
+    outline: none;
+  }
+  
+  textarea{ min-height: 140px; resize: vertical; }
+  
+  input:focus, select:focus, textarea:focus{
+    border-color: rgba(27,74,80,0.55);
+    outline: 3px solid rgba(27,74,80,0.16);
+  }
+  
+  .form-row{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  @media (min-width: 860px){
+    .form-row{ grid-template-columns: 1fr 1fr; }
+  }
+  
+  /* =========================
+     Footer (canard)
+     ========================= */
+  .site-footer{
+    border-top: 1px solid var(--line-soft);
+    padding: 18px 0;
+    background: linear-gradient(180deg, rgba(7,26,28,0.48), rgba(7,26,28,0.26));
+  }
+  
+  .footer-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-inner small{ color: rgba(247,251,251,0.74); }
+  
+  .footer-links a{
+    color: rgba(247,251,251,0.74);
+    text-decoration: none;
+    margin-left: 12px;
+    border-bottom: 1px dotted rgba(255,255,255,0.24);
+  }
+  .footer-links a:hover{
+    color: var(--text-on-teal);
+    border-bottom-color: rgba(255,255,255,0.50);
+  }
+  
+  /* =========================
+     Visuel accueil (4 badges + image au centre)
+     ========================= */
+  .home-visual{
+    --gap: 28px;
+    --badge-w: 320px;
+    --center-w: 430px;
+  
+    display: grid;
+    grid-template-columns: minmax(260px, var(--badge-w)) minmax(280px, var(--center-w)) minmax(260px, var(--badge-w));
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "tl center tr"
+      "bl center br";
+    gap: var(--gap);
+  
+    align-items: center;
+    justify-items: center;
+    margin-top: 6px;
+  }
+  
+  /* Position des 4 cards */
+  .home-badge[data-pos="tl"]{ grid-area: tl; }
+  .home-badge[data-pos="tr"]{ grid-area: tr; }
+  .home-badge[data-pos="bl"]{ grid-area: bl; }
+  .home-badge[data-pos="br"]{ grid-area: br; }
+  
+  /* Centre */
+  .home-center{
+    grid-area: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .home-center-img{
+    width: 100%;
+    max-width: var(--center-w);
+    height: auto;
+    display: block;
+    border-radius: 22px;
+    box-shadow: 0 14px 30px rgba(0,0,0,.22);
+  }
+  
+  /* Optionnel : donner un look "badge" un peu plus marqué aux cards */
+  .home-badge.card{
+    width: 100%;
+  }
+  
+  @media (max-width: 900px){
+    .home-visual{
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "center center"
+        "tl tr"
+        "bl br";
+      --center-w: 520px;
+      --gap: 18px;
+    }
+  }
+  
+  @media (max-width: 520px){
+    .home-visual{
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "center"
+        "tl"
+        "tr"
+        "bl"
+        "br";
+    }
+  }
+  
+  /* =========================
+     Page Renseignements : bouton visible (texte noir + fond clair)
+     ========================= */
+  body[data-tagline^="Renseignements"] .btn{
+    color: #000;
+    font-weight: 600;
+  }
+  body[data-tagline^="Renseignements"] .btn:hover{ color: #000; }
+  
+  body[data-tagline^="Renseignements"] .hero-actions .btn{
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 12px;
+  
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,.18);
+    color: #000;
+  
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  body[data-tagline^="Renseignements"] .hero-actions .btn:hover{
+    background: #f2f4f6;
+    color: #000;
+  }
+  
+  /* =========================
+     Custom Select (Secteur)
+     ========================= */
+  .cselect{ position: relative; }
+  
+  .cselect-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(8,18,19,0.16);
+  
+    background:
+      var(--grain),
+      linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.46));
+  
+    color: var(--ink);
+    cursor: pointer;
+  }
+  
+  .cselect-btn:focus-visible{
+    border-color: rgba(27,74,80,0.55);
+    outline: 3px solid rgba(27,74,80,0.16);
+    outline-offset: 2px;
+  }
+  
+  .cselect-list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 8px);
+  
+    display: none;
+    padding: 8px;
+    border-radius: 14px;
+    border: 1px solid rgba(8,18,19,0.16);
+  
+    background:
+      var(--grain),
+      linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.86));
+  
+    box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+    z-index: 1200;
+  }
+  
+  .cselect.open .cselect-list{
+    display: grid;
+    gap: 6px;
+  }
+  
+  .cselect-option{
+    width: 100%;
+    text-align: left;
+  
+    padding: 12px 12px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+  
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  
+  .cselect-option:hover,
+  .cselect-option:focus-visible{
+    background: var(--teal-700);
+    color: var(--text-on-teal);
+    border-color: rgba(255,255,255,0.22);
+    outline: none;
+  }
+  
+  .cselect-option[aria-selected="true"]{
+    background: rgba(27,74,80,0.18);
+    border-color: rgba(27,74,80,0.30);
+  }
+  
+  /* =========================
+     Formulaire – correction layout final
+     ========================= */
+  .form .field:has(textarea){ grid-column: 1 / -1; }
+  .form textarea{ width: 100%; }
+  
+  .hero-actions{
+    grid-column: 1 / -1;
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  /* =================================================
+     HOME : layout capture (visuel en haut + texte en dessous)
+     ================================================= */
+  body.page-home .hero-inner.home-hero{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  /* La home ne doit pas repasser en 2 colonnes au-dessus de 768px */
+  @media (min-width: 768px){
+    body.page-home .hero-inner.home-hero{
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Encart texte du bas (même style "badge glass") */
+  body.page-home .home-text-badge{
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+    background:
+      var(--grain),
+      linear-gradient(180deg, var(--glass-1), var(--glass-2));
+    box-shadow: var(--shadow);
+    padding: 18px;
+  }
+  
+  /* Texte pleine largeur + justifié sur la home (dans l'encart du bas) */
+  body.page-home .home-text-badge .hero-text,
+  body.page-home .home-text-badge .hero-text p{
+    max-width: 100%;
+    width: 100%;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
+  body.page-home .home-text-badge .hero-text p:last-child{
+    text-align-last: left;
+  }
+  /* Page Contact : icônes (3 petites images) => taille fixe */
+body[data-tagline^="Renseignements"] .hero-links img{
+  width: auto !important;
+  height: 118px !important;
+  max-width: 140px;
+}
+/* =================================================
+   CONTACT (Renseignements) : 3 badges en bas, taille fixe
+   ================================================= */
+
+   body[data-tagline^="Renseignements"] .hero-links{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: center;
+    justify-items: center;
+  
+    margin-top: 5rem;   /* ajuste si besoin */
+    margin-left: 0;       /* annule ton ancien décalage */
+  }
+  
+  /* Les 3 images -> même taille, comme sur la capture */
+  body[data-tagline^="Renseignements"] .hero-links img{
+    width: 220px;         /* ✅ taille “badge” */
+    height: 140px;
+    max-width: 100%;
+    object-fit: contain;
+  
+    border-radius: 18px;
+    opacity: 0.95;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  body[data-tagline^="Renseignements"] .hero-links img:hover{
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+  
+  /* Responsive : sur mobile -> 1 colonne */
+  @media (max-width: 767px){
+    body[data-tagline^="Renseignements"] .hero-links{
+      grid-template-columns: 1fr;
+    }
+  
+    body[data-tagline^="Renseignements"] .hero-links img{
+      width: min(320px, 90vw);
+      height: auto;
+    }
+  }
+
+  /* =================================================
+   Cards crème : listes toujours en noir (lisible)
+   ================================================= */
+
+.card ul,
+.card li{
+  color: var(--muted-on-cream);
+}
+
+.card li::marker{
+  color: var(--muted-on-cream);
+}
+
+/* =================================================
+   PRESTATIONS / RÉALISATIONS : HERO pleine largeur
+   ================================================= */
+
+   body[data-tagline^="Prestations"] .hero-inner{
+    grid-template-columns: 1fr; /* une seule colonne */
+  }
+  
+  body[data-tagline^="Prestations"] .hero-text{
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  body[data-tagline^="Prestations"] .hero-text p{
+    max-width: 100%;
+    width: 100%;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
+  /* Dernière ligne plus naturelle */
+  body[data-tagline^="Prestations"] .hero-text p:last-child{
+    text-align-last: left;
+  }
+  
+  /* =================================================
+   PRESENTATION : mise en page exactement comme la capture
+   ================================================= */
+
+body.page-presentation .presentation-stack{
+  padding-top: 10px; /* un peu d'air sous le hero */
+}
+
+/* HERO de présentation : 1 colonne (pas d'image à droite) */
+body.page-presentation .hero-inner.hero-only-text{
+  grid-template-columns: 1fr !important;
+}
+
+/* Les grandes cards crème empilées (1 par ligne) */
+body.page-presentation .presentation-badge{
+  grid-column: span 12;
+  padding: 18px 18px;
+}
+
+/* Contenu intérieur : texte à gauche / 2 images à droite */
+body.page-presentation .pb-inner{
+  display: grid;
+  grid-template-columns: 1fr 280px;   /* colonne images comme sur ta capture */
+  gap: 16px;
+  align-items: start;
+}
+
+/* Texte */
+body.page-presentation .pb-text h3{
+  margin-top: 0;
+}
+
+body.page-presentation .pb-text p{
+  margin: 0 0 10px;
+  color: var(--muted-on-cream);
+  line-height: 1.55;
+}
+
+/* Liste : garde noir lisible comme tes badges */
+body.page-presentation .pb-list{
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: var(--muted-on-cream);
+}
+body.page-presentation .pb-list li{
+  margin: 7px 0;
+  line-height: 1.5;
+}
+
+/* Colonne images : 2 rectangles empilés */
+body.page-presentation .pb-media{
+  display: grid;
+  gap: 12px;
+  justify-items: end;   /* colle à droite visuellement */
+}
+
+/* “Cadre” image (tu remplaceras src + href) */
+body.page-presentation .pb-img{
+  width: 240px;            /* taille proche capture */
+  aspect-ratio: 4 / 2.6;   /* rectangles */
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(8,18,19,0.22);
+  background: rgba(43,102,217,0.85); /* fallback si image absente */
+  display: block;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+body.page-presentation .pb-img img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Responsive : sur mobile, images passent dessous */
+@media (max-width: 820px){
+  body.page-presentation .pb-inner{
+    grid-template-columns: 1fr;
+  }
+  body.page-presentation .pb-media{
+    justify-items: start;
+    grid-template-columns: 1fr 1fr;
+  }
+  body.page-presentation .pb-img{
+    width: 100%;
+  }
+}
+@media (max-width: 520px){
+  body.page-presentation .pb-media{
+    grid-template-columns: 1fr;
+  }
+}
+/* =================================================
+   BADGES : typographie identique à la page d’accueil
+   ================================================= */
+
+/* Texte général des badges */
+.card,
+.presentation-badge{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* Titres des badges = mêmes règles que h2/h3 hero */
+.card h3,
+.presentation-badge h3{
+  margin: 0 0 12px;
+  font-size: clamp(1.25rem, 2.2vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--ink);
+}
+
+/* Paragraphes = même rendu que hero-text */
+.card p,
+.presentation-badge p{
+  margin: 0 0 1.1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted-on-cream);
+}
+
+/* Listes = cohérentes avec le texte */
+.card ul,
+.presentation-badge ul{
+  margin: 0.6rem 0 0 1.1rem;
+  padding: 0;
+  color: var(--muted-on-cream);
+}
+
+.card li,
+.presentation-badge li{
+  margin-bottom: 0.5rem;
+  line-height: 1.55;
+}
+
+/* Puces sobres (comme sur la home) */
+.card li::marker,
+.presentation-badge li::marker{
+  color: rgba(8,18,19,0.55);
+}
+/* =================================================
+   PRESENTATION – Badge principal
+   Typo STRICTEMENT identique à la home
+   ================================================= */
+
+   .hero-text-like h2{
+    margin: 0 0 12px;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--text-on-teal);
+  }
+  
+  .hero-text-like p{
+    margin: 0 0 1.2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--muted-on-teal);
+  }
+  
+  /* Paragraphes avec titre en gras intégré */
+  .hero-text-like p strong{
+    font-weight: 700;
+    color: var(--text-on-teal);
+  }
+  
+  /* Dernier paragraphe un peu plus posé */
+  .hero-text-like p:last-child{
+    margin-bottom: 0;
+  }
+  /* =========================================
+   PRÉSENTATION – Hero pleine largeur (1 colonne)
+   ========================================= */
+
+.page-presentation .hero-inner{
+  grid-template-columns: 1fr; /* ✅ une seule colonne */
+}
+
+/* Le texte prend toute la largeur */
+.page-presentation .hero-text{
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Texte justifié comme sur la home */
+.page-presentation .hero-text p{
+  max-width: 100%;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Dernière ligne plus naturelle */
+.page-presentation .hero-text p:last-child{
+  text-align-last: left;
+}
+
+/* Décalage horizontal entre les boutons du hero */
+.hero-actions{
+  display: flex;
+  gap: 16px; /* ⬅️ ajuste ici (ex : 12px, 20px…) */
+}
+
+/* =========================
+   PRESENTATION : images (badges du bas) sans contour + hover "lift"
+   ========================= */
+
+/* La tuile cliquable (ton <a class="pb-img">) */
+body.page-presentation .pb-img{
+  display: block;
+  border: none !important;      /* ✅ supprime tout contour */
+  outline: none;
+  box-shadow: none;
+  transform: translateZ(0);
+  transition: transform .18s ease, filter .18s ease;
+}
+
+/* L'image à l'intérieur */
+body.page-presentation .pb-img img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none !important;      /* ✅ supprime tout contour */
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hover : se soulève légèrement (comme sur contact) */
+body.page-presentation .pb-img:hover{
+  transform: translateY(-2px);
+  filter: saturate(1.05);
+}
+
+/* Accessibilité : effet identique au clavier */
+body.page-presentation .pb-img:focus-visible{
+  transform: translateY(-2px);
+  outline: 3px solid rgba(255,255,255,0.22);
+  outline-offset: 4px;
+  border-radius: 12px; /* si ton image est arrondie */
+}
+
+/* =================================================
+   PRESTATIONS : mise en page spécifique (NE TOUCHE PAS aux autres pages)
+   ================================================= */
+
+/* HERO : 1 seule colonne + texte pleine largeur + justifié */
+body.page-prestations .hero-inner.hero-only-text{
+  grid-template-columns: 1fr !important;
+}
+
+body.page-prestations .hero-text{
+  max-width: 100%;
+  width: 100%;
+}
+
+body.page-prestations .hero-text p{
+  max-width: 100%;
+  width: 100%;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+body.page-prestations .hero-text p:last-child{
+  text-align-last: left;
+}
+
+/* =================================================
+   PRESTATIONS : Badge "Nos domaines d'intervention"
+   Texte à gauche + 5 images à droite (décalées)
+   ================================================= */
+
+body.page-prestations .card-domains{
+  grid-column: span 12;
+  padding: 18px;
+}
+
+body.page-prestations .domains-inner{
+  display: grid;
+  grid-template-columns: 1fr 320px; /* colonne images à droite */
+  gap: 18px;
+  align-items: start;
+}
+
+body.page-prestations .domains-text h3{
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+body.page-prestations .domains-group{
+  margin: 0 0 12px;
+}
+
+body.page-prestations .domains-title{
+  margin: 0 0 6px;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+body.page-prestations .domains-desc{
+  margin: 0;
+  color: var(--muted-on-cream);
+  line-height: 1.55;
+}
+
+/* Colonne images (5 visuels) */
+body.page-prestations .domains-media{
+  display: grid;
+  gap: 12px;
+  justify-items: end; /* colle à droite */
+}
+
+/* Les tuiles image (tu remplaceras les URLs) */
+body.page-prestations .domain-icon{
+  display: block;
+  width: 160px;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+  transform: translateZ(0);
+  transition: transform .18s ease, filter .18s ease;
+}
+
+body.page-prestations .domain-icon img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border: none;
+}
+
+/* Hover "lift" léger */
+body.page-prestations .domain-icon:hover{
+  transform: translateY(-2px);
+  filter: saturate(1.05);
+}
+
+body.page-prestations .domain-icon:focus-visible{
+  transform: translateY(-2px);
+  outline: 3px solid rgba(27,74,80,0.25);
+  outline-offset: 4px;
+}
+
+/* Décalages (comme ta capture) */
+body.page-prestations .domain-icon.stagger.s1{ margin-right: 0px; }
+body.page-prestations .domain-icon.stagger.s2{ margin-right: 22px; }
+body.page-prestations .domain-icon.stagger.s3{ margin-right: 0px; }
+body.page-prestations .domain-icon.stagger.s4{ margin-right: 22px; }
+body.page-prestations .domain-icon.stagger.s5{ margin-right: 0px; }
+
+/* Responsive */
+@media (max-width: 980px){
+  body.page-prestations .domains-inner{
+    grid-template-columns: 1fr;
+  }
+  body.page-prestations .domains-media{
+    justify-items: start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body.page-prestations .domain-icon{
+    width: 100%;
+  }
+  body.page-prestations .domain-icon.stagger{
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 520px){
+  body.page-prestations .domains-media{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================================================
+   PRESTATIONS : Pastille centrée "Notre méthode de travail"
+   ================================================= */
+
+body.page-prestations .method-pill-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 0 0;
+}
+
+body.page-prestations .method-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+  border-radius: 14px;
+
+  background:
+    var(--grain),
+    linear-gradient(180deg, var(--cream-50), #f4f3ef);
+
+  border: 1px solid rgba(8,18,19,0.14);
+  box-shadow: var(--card-shadow);
+
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  min-width: min(520px, 92vw); /* aspect centré et "barre" */
+  text-align: center;
+}
+
+/* Un peu d’air sous la pastille avant les 3 cartes */
+body.page-prestations .method-grid{
+  padding-top: 10px;
+}
+
+/* =================================================
+   PRESTATIONS : cohérence typographique dans les cards
+   (lists noires lisibles)
+   ================================================= */
+
+body.page-prestations .card ul,
+body.page-prestations .card li{
+  color: var(--muted-on-cream);
+}
+body.page-prestations .card li::marker{
+  color: rgba(8,18,19,0.55);
+}
+/* PRESTATIONS – titre principal du hero (identique à Présentation) */
+.page-prestations .hero h2{
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* PRESTATIONS – titres de badges principaux */
+body[data-tagline^="Prestations"] .card h3{
+  font-size: clamp(1.3rem, 2.6vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: 0.25px;
+}
+
+/* =========================
+   FOOTER LINKS : pas de soulignement / pas de ligne
+   ========================= */
+.site-footer .footer-links a{
+  color: rgba(247,251,251,0.74);
+  text-decoration: none;
+  border-bottom: none;           /* enlève la ligne pointillée */
+  margin-left: 12px;
+  opacity: 0.85;
+}
+
+.site-footer .footer-links a:hover{
+  color: var(--text-on-teal);
+  opacity: 1;
+}
+
+/* Empêche tout style décoratif global sur les liens (si tu en as ailleurs) */
+.site-footer .footer-links a::after,
+.site-footer .footer-links a::before{
+  content: none !important;
+  display: none !important;
+}
+
+/* =========================
+   Page Mentions légales
+   ========================= */
+
+/* Le wrapper (dans le container) */
+.legal-page{
+  padding: 24px 0 64px;
+}
+
+/* ✅ Contraint la largeur et crée les marges latérales */
+.legal-page .legal-grid{
+  width: min(1100px, calc(100% - 64px));
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.legal-title{
+  text-align: center;
+  margin: 0 0 28px;
+}
+
+/* 2 colonnes */
+.legal-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.legal-block + .legal-block{
+  margin-top: 26px;
+}
+
+.legal-block h2{
+  margin: 0 0 10px;
+}
+
+.legal-text{
+  line-height: 1.8;
+}
+
+.legal-text p{
+  margin: 0 0 12px;
+}
+
+.legal-text a{
+  text-decoration: underline;
+}
+
+.legal-note{
+  opacity: 0.85;
+  font-size: 0.95em;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .legal-grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .legal-page .legal-grid{
+    width: calc(100% - 32px); /* 16px de marge de chaque côté sur mobile */
+  }
+}
+/* =========================
+   Cookies (bandeau + modal) – cohérent avec le thème
+   ========================= */
+
+   .cookie-banner{
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 2000;
+  
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background:
+      var(--grain),
+      linear-gradient(180deg, rgba(11,35,38,0.92), rgba(7,26,28,0.86));
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+  }
+  
+  .cookie-banner__inner{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 14px;
+  }
+  
+  .cookie-banner__text p{
+    margin: 6px 0 0;
+    color: var(--muted-on-teal);
+    line-height: 1.5;
+    max-width: 72ch;
+  }
+  
+  .cookie-banner__actions{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  .cookie-btn{
+    padding: 10px 12px;
+  }
+  
+  /* Modal */
+  .cookie-modal{
+    position: fixed;
+    inset: 0;
+    z-index: 2100;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    background: rgba(0,0,0,0.45);
+  }
+  
+  .cookie-modal__panel{
+    width: min(720px, 92vw);
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background:
+      var(--grain),
+      linear-gradient(180deg, rgba(11,35,38,0.96), rgba(7,26,28,0.90));
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  
+  .cookie-modal__head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  
+  .cookie-modal__head h2{
+    margin: 0;
+    font-size: 1.15rem;
+  }
+  
+  .cookie-x{
+    border: 1px solid var(--line);
+    background: var(--glass-2);
+    color: var(--text-on-teal);
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 0;
+  }
+  .cookie-x:hover{ background: var(--glass-hover); }
+  
+  .cookie-modal__body{
+    padding: 14px 16px;
+  }
+  
+  .cookie-row{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--line-soft);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.06);
+  }
+  
+  .cookie-row p{
+    margin: 6px 0 0;
+    color: var(--muted-on-teal);
+    line-height: 1.5;
+  }
+  
+  .cookie-hint{
+    margin-top: 12px;
+    color: var(--muted-on-teal);
+    opacity: 0.9;
+  }
+  
+  .cookie-modal__actions{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 14px 16px;
+    border-top: 1px solid var(--line-soft);
+  }
+  
+  /* Switch */
+  .cookie-switch{
+    position: relative;
+    width: 52px;
+    height: 30px;
+    display: inline-block;
+  }
+  .cookie-switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .cookie-slider{
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.10);
+    cursor: pointer;
+  }
+  .cookie-slider::after{
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 4px;
+    top: 3px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.86);
+    transition: transform 0.18s ease;
+  }
+  .cookie-switch input:checked + .cookie-slider{
+    background: rgba(255,255,255,0.16);
+  }
+  .cookie-switch input:checked + .cookie-slider::after{
+    transform: translateX(22px);
+  }
+  
+  /* Mobile */
+  @media (max-width: 760px){
+    .cookie-banner__inner{
+      grid-template-columns: 1fr;
+    }
+    .cookie-banner__actions{
+      justify-content: flex-start;
+    }
+  }
+  /* Lien gérer les cookies */
+.footer-links a#manage-cookies {
+  cursor: pointer;
+}
+/* Cookies: s'assure que l'attribut hidden masque vraiment */
+.cookie-banner[hidden],
+.cookie-modal[hidden]{
+  display: none !important;
+}
+/* Mentions légales – lien hébergeur */
+.legal-page a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.legal-page a:hover {
+  opacity: 0.85;
+}

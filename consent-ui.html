@@ -1,0 +1,53 @@
+<!-- Bandeau cookies -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Préférences cookies" hidden>
+  <div class="cookie-banner__inner">
+    <div class="cookie-banner__text">
+      <strong>Cookies</strong>
+      <p>
+        Nous utilisons des cookies de mesure d’audience (Google Analytics) pour améliorer le site.
+        Vous pouvez accepter, refuser, ou personnaliser.
+      </p>
+    </div>
+
+    <div class="cookie-banner__actions">
+      <button class="btn cookie-btn" id="cookie-refuse">Refuser</button>
+      <button class="btn cookie-btn" id="cookie-customize">Personnaliser</button>
+      <button class="btn primary cookie-btn" id="cookie-accept">Accepter</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal personnalisation -->
+<div class="cookie-modal" id="cookie-modal" role="dialog" aria-modal="true" aria-label="Personnaliser les cookies" hidden>
+  <div class="cookie-modal__panel">
+    <div class="cookie-modal__head">
+      <h2>Préférences cookies</h2>
+      <button class="cookie-x" id="cookie-close" aria-label="Fermer">×</button>
+    </div>
+
+    <div class="cookie-modal__body">
+      <div class="cookie-row">
+        <div>
+          <strong>Mesure d’audience</strong>
+          <p>Autoriser Google Analytics à mesurer la fréquentation (anonyme).</p>
+        </div>
+
+        <label class="cookie-switch">
+          <input type="checkbox" id="cookie-analytics-toggle" />
+          <span class="cookie-slider" aria-hidden="true"></span>
+        </label>
+      </div>
+
+      <div class="cookie-hint">
+        <p>
+          Vous pouvez modifier votre choix à tout moment via le lien “Gérer les cookies” (optionnel, on peut l’ajouter ensuite).
+        </p>
+      </div>
+    </div>
+
+    <div class="cookie-modal__actions">
+      <button class="btn cookie-btn" id="cookie-save">Enregistrer</button>
+      <button class="btn primary cookie-btn" id="cookie-accept-all">Tout accepter</button>
+    </div>
+  </div>
+</div>

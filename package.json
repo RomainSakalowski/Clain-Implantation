@@ -1,0 +1,10 @@
+{
+  "name": "clain-implantation",
+  "private": true,
+  "scripts": {
+    "start": "npx servor public --reload --fallback index.html"
+  },
+  "dependencies": {
+    "servor": "^4.0.2"
+  }
+}
