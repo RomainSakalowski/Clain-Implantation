@@ -220,16 +220,6 @@
     border: 0;
   }
   
-  @media (max-width: 760px){
-    .header-inner{
-      grid-template-columns: 1fr;
-      justify-items: center;
-      row-gap: 10px;
-    }
-    .brand-wrap{ justify-self: center; }
-    .menu{ justify-self: center; }
-  }
-  
   @media (max-width: 600px){
     .site-header .brand-badge{
       padding: 1px 2px;
@@ -1627,7 +1617,7 @@ body[data-tagline^="Prestations"] .card h3{
 /* =========================
    Header – layout mobile final
    ========================= */
-   @media (max-width: 640px){
+   @media (max-width: 760px){
 
     .header-inner{
       display: grid;
@@ -1687,4 +1677,14 @@ body[data-tagline^="Prestations"] .card h3{
       rgba(0,0,0,0.03)
     );
   }
-    
+  
+/* Masque léger des images pendant le chargement pour éviter le flash */
+.thumb img{
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+
+/* Quand la page est prête, on les affiche */
+body.ready .thumb img{
+  opacity: 1;
+}
