@@ -1615,42 +1615,48 @@ body[data-tagline^="Prestations"] .card h3{
   }
 
 /* =========================
-   Header – layout mobile (logo gauche / menu droite)
+   Header – layout mobile FINAL
    ========================= */
    @media (max-width: 760px){
 
     .header-inner{
       display: grid;
-      grid-template-columns: 1fr auto; /* ✅ pousse le menu à droite */
-      grid-template-rows: auto auto;
+      grid-template-columns: 1fr auto;   /* logo | menu */
+      grid-template-rows: auto auto;     /* ligne 1 / ligne 2 */
+      grid-template-areas:
+        "logo menu"
+        "tagline tagline";
       align-items: center;
       column-gap: 12px;
       row-gap: 6px;
     }
   
-    /* Logo bien à gauche */
+    /* Logo */
     .brand-wrap{
+      grid-area: logo;
       justify-self: start;
-      align-items: flex-start;   /* ✅ au lieu de center */
+      align-items: flex-start;
       text-align: left;
     }
   
-    /* Menu bien à droite */
+    /* Menu */
     .menu{
+      grid-area: menu;
       justify-self: end;
-      align-self: center;
+      align-self: center;   /* ✅ aligné horizontalement avec le logo */
     }
   
-    /* Tagline en dessous, centrée (si tu la gardes) */
+    /* Tagline en dessous */
     #pageTagline{
-      grid-column: 1 / -1;
+      grid-area: tagline;
       text-align: center;
       margin: 0;
+      padding-top: 2px;
       opacity: 0.9;
       font-size: 0.9rem;
     }
-  
-  }  
+  }
+    
 /* =================================================
    Fond uniforme entre header et footer (même couleur qu'avant)
    ================================================= */
