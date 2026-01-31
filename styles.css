@@ -1615,40 +1615,42 @@ body[data-tagline^="Prestations"] .card h3{
   }
 
 /* =========================
-   Header – layout mobile final
+   Header – layout mobile (logo gauche / menu droite)
    ========================= */
    @media (max-width: 760px){
 
     .header-inner{
       display: grid;
-      grid-template-columns: auto auto;      /* logo | menu */
-      grid-template-rows: auto auto;         /* ligne 1 | ligne 2 */
+      grid-template-columns: 1fr auto; /* ✅ pousse le menu à droite */
+      grid-template-rows: auto auto;
       align-items: center;
       column-gap: 12px;
       row-gap: 6px;
     }
   
-    /* Logo à gauche (taille inchangée) */
+    /* Logo bien à gauche */
     .brand-wrap{
       justify-self: start;
+      align-items: flex-start;   /* ✅ au lieu de center */
+      text-align: left;
     }
   
-    /* Menu à droite, centré verticalement par rapport au logo */
+    /* Menu bien à droite */
     .menu{
       justify-self: end;
       align-self: center;
     }
   
-    /* Tagline en dessous, centrée */
+    /* Tagline en dessous, centrée (si tu la gardes) */
     #pageTagline{
-      grid-column: 1 / -1;   /* prend toute la largeur */
+      grid-column: 1 / -1;
       text-align: center;
       margin: 0;
       opacity: 0.9;
-      font-size: 0.9rem;     /* ajuste si besoin */
+      font-size: 0.9rem;
     }
   
-  }
+  }  
 /* =================================================
    Fond uniforme entre header et footer (même couleur qu'avant)
    ================================================= */
@@ -1677,14 +1679,47 @@ body[data-tagline^="Prestations"] .card h3{
       rgba(0,0,0,0.03)
     );
   }
-  
-/* Masque léger des images pendant le chargement pour éviter le flash */
-.thumb img{
-  opacity: 0;
-  transition: opacity .15s ease;
+
+/* =========================
+   Images : anti “flash bleu” iOS / mobile
+   ========================= */
+
+/* on garde un fond cohérent pendant le chargement */
+.thumb{
+  background:
+    var(--grain),
+    linear-gradient(180deg, rgba(11,35,38,0.90), rgba(15,47,51,0.90));
 }
 
-/* Quand la page est prête, on les affiche */
-body.ready .thumb img{
+/* toutes les images qu'on va gérer en fade */
+img.img-fade{
+  opacity: 0;
+  transition: opacity .18s ease;
+}
+
+/* l'image ne devient visible que quand elle est vraiment chargée */
+img.img-fade.is-loaded{
   opacity: 1;
+}
+
+/* =========================
+   HOME – texte aligné à gauche UNIQUEMENT sur mobile
+   ========================= */
+   @media (max-width: 767px){
+    body.page-home .home-text-badge .hero-text,
+    body.page-home .home-text-badge .hero-text p{
+      text-align: left !important;
+      text-justify: auto !important;
+      text-align-last: auto !important;
+    }
+  }
+  
+/* =========================
+   PRESENTATION – boutons centrés sur mobile
+   ========================= */
+@media (max-width: 767px){
+  body.page-presentation .hero-actions .btn{
+    justify-content: center;   /* centre le texte horizontalement */
+    text-align: center;
+  }
 }

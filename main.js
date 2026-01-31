@@ -1,5 +1,6 @@
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 // =========================
 // Custom Select (Secteur)
 // =========================
@@ -99,3 +100,28 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     });
   }
 })();
+
+// =========================
+// Images – anti flash bleu / placeholder mobile (iOS & Android)
+// =========================
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img').forEach((img) => {
+    img.classList.add('img-fade');
+
+    // Image déjà en cache
+    if (img.complete && img.naturalWidth > 0) {
+      img.classList.add('is-loaded');
+      return;
+    }
+
+    // Chargement réel
+    img.addEventListener('load', () => {
+      img.classList.add('is-loaded');
+    }, { once: true });
+
+    // Sécurité si erreur
+    img.addEventListener('error', () => {
+      img.classList.add('is-loaded');
+    }, { once: true });
+  });
+});
