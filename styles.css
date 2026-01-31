@@ -1581,3 +1581,110 @@ body[data-tagline^="Prestations"] .card h3{
 .legal-page a:hover {
   opacity: 0.85;
 }
+/* =========================
+   Cookie switch – état ACTIF (accentué)
+   ========================= */
+
+/* Fond du switch quand activé */
+.cookie-switch input:checked + .cookie-slider{
+  background:
+    linear-gradient(135deg, #f2d6b3, #ffffff);
+  border-color: rgba(255,255,255,0.45);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.35) inset,
+    0 0 10px rgba(242,214,179,0.45);
+}
+
+/* Bouton rond quand activé */
+.cookie-switch input:checked + .cookie-slider::after{
+  background: #ffffff;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.35);
+}
+
+/* Animation douce (optionnel mais très clean) */
+.cookie-slider{
+  transition: background 0.22s ease, box-shadow 0.22s ease;
+}
+
+.cookie-slider::after{
+  transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+}
+/* =========================
+   Cookie – bouton Enregistrer
+   ========================= */
+
+   #cookie-save{
+    color: #ffffff;               /* texte blanc */
+  }
+  
+  /* optionnel : assurer le blanc même au hover/focus */
+  #cookie-save:hover,
+  #cookie-save:focus{
+    color: #ffffff;
+  }
+
+/* =========================
+   Header – layout mobile final
+   ========================= */
+   @media (max-width: 640px){
+
+    .header-inner{
+      display: grid;
+      grid-template-columns: auto auto;      /* logo | menu */
+      grid-template-rows: auto auto;         /* ligne 1 | ligne 2 */
+      align-items: center;
+      column-gap: 12px;
+      row-gap: 6px;
+    }
+  
+    /* Logo à gauche (taille inchangée) */
+    .brand-wrap{
+      justify-self: start;
+    }
+  
+    /* Menu à droite, centré verticalement par rapport au logo */
+    .menu{
+      justify-self: end;
+      align-self: center;
+    }
+  
+    /* Tagline en dessous, centrée */
+    #pageTagline{
+      grid-column: 1 / -1;   /* prend toute la largeur */
+      text-align: center;
+      margin: 0;
+      opacity: 0.9;
+      font-size: 0.9rem;     /* ajuste si besoin */
+    }
+  
+  }
+/* =================================================
+   Fond uniforme entre header et footer (même couleur qu'avant)
+   ================================================= */
+
+   html{
+    background: #1a4a4a;  /* ✅ ta couleur de fond du thème */
+  }
+  
+  body{
+    position: relative;
+    background: transparent; /* la couleur est portée par html */
+  }
+  
+  /* Voile TRÈS léger : uniformise sans assombrir */
+  body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+  
+    /* ✅ beaucoup plus clair que le précédent */
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      rgba(0,0,0,0.03)
+    );
+  }
+    

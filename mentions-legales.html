@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Fix 1 : évite le flash blanc immédiatement -->
+    <style>
+     html, body { margin: 0; background: #0f2f2f; }
+     body { opacity: 0; transition: opacity .15s ease; }
+     body.ready { opacity: 1; }
+    </style>
+    <script>
+     window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('ready');
+     });
+    </script>
+
     <title>Mentions légales</title>
   </head>
 

@@ -3,6 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fix 1 : évite le flash blanc immédiatement -->
+  <style>
+    html, body { margin: 0; background: #0f2f2f; }
+    body { opacity: 0; transition: opacity .15s ease; }
+    body.ready { opacity: 1; }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('ready');
+    });
+  </script>
+
   <title>Clain Implantation — Présentation</title>
 
   <link rel="icon" type="image/svg+xml" href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20sans%20contour.png" />
