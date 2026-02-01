@@ -107,12 +107,12 @@
 
             <div class="form-row">
               <div class="field">
-                <label for="nom">Nom</label>
+                <label for="nom">Nom <span class="required">*</span></label>
                 <input id="nom" name="nom" required />
               </div>
 
               <div class="field">
-                <label for="email">Email</label>
+                <label for="email">Email <span class="required">*</span></label>
                 <input id="email" name="email" type="email" required />
               </div>
             </div>
@@ -144,7 +144,7 @@
             </div>
 
             <div class="field">
-              <label for="message">Besoin / Contexte</label>
+              <label for="message">Besoin / Contexte <span class="required">*</span></label>
               <textarea
                 id="message"
                 name="message"
@@ -152,6 +152,8 @@
                 placeholder="Expliquez votre besoin, contraintes, délais, etc."
               ></textarea>
             </div>
+
+            <p class="form-note">* Obligatoire</p>
 
             <div class="hero-actions">
               <button class="btn primary" type="submit">Envoyer</button>

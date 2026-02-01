@@ -1798,4 +1798,31 @@ body[data-tagline^="Merci"]{
       margin: 0;
     }
   }
-  
+ 
+  /* Anti flash bleu clair sous les images */
+img {
+  background-color: #0b2326; /* EXACTEMENT ton bleu foncé */
+}
+.thumb,
+.hero-art,
+.pb-img,
+.domain-icon {
+  background-color: #0b2326;
+}
+img {
+  display: block;
+}
+
+/* Formulaire – champs obligatoires */
+.required {
+  color: #0f2f2f; /* ou une couleur légèrement plus foncée si tu veux */
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: rgba(15, 47,51, 0.75);
+  margin-top: 6px;
+  margin-bottom: 30px;
+}
