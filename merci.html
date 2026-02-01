@@ -1,12 +1,76 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Merci — Clain Implantation</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fix : évite flash blanc -->
+  <style>
+    html, body { margin: 0; background: #0f2f2f; }
+    body { opacity: 0; transition: opacity .15s ease; }
+    body.ready { opacity: 1; }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('ready');
+    });
+  </script>
+
+  <title>Clain Implantation — Merci</title>
+
+  <link rel="icon" type="image/svg+xml" href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20sans%20contour.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-<body>
-  <h1>Merci pour votre message</h1>
-  <p>Nous vous répondrons très rapidement.</p>
-  <a href="/">Retour à l’accueil</a>
+
+<body data-tagline="Merci • Message envoyé">
+  <!-- HEADER injecté -->
+  <div id="site-header"></div>
+
+  <!-- ✅ Modal style “cookies”, mais pour le remerciement -->
+  <div class="cookie-modal" id="thankyouModal" role="dialog" aria-modal="true" aria-labelledby="tyTitle">
+    <div class="cookie-modal__panel">
+      <div class="cookie-modal__head">
+        <h2 id="tyTitle">Merci pour votre message</h2>
+
+        <!-- Le X renvoie à l’accueil -->
+        <a class="cookie-x" href="index.html" aria-label="Fermer">×</a>
+      </div>
+
+      <div class="cookie-modal__body">
+        <p style="margin:0; color: rgba(247,251,251,0.88); font-weight: 650;">
+          Votre demande a bien été transmise à Clain Implantation.
+        </p>
+
+        <p style="margin:10px 0 0; color: rgba(247,251,251,0.75); line-height: 1.55;">
+          Nous revenons vers vous <strong>dans les plus brefs délais</strong>.
+          Si votre demande est urgente, vous pouvez aussi nous contacter par téléphone.
+        </p>
+
+        <p class="cookie-hint" style="margin-top: 12px;">
+          Astuce : pensez à vérifier vos spams si vous attendez une réponse par e-mail.
+        </p>
+      </div>
+
+      <div class="cookie-modal__actions">
+        <a class="btn" href="index.html">Retour à l’accueil</a>
+        <a class="btn primary" href="renseignement.html">Envoyer un autre message</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./load-header.js" defer></script>
+  <script src="./main.js" defer></script>
+
+  <!-- Optionnel : fermeture via touche Échap -->
+  <script>
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') window.location.href = 'index.html';
+    });
+  </script>
 </body>
 </html>

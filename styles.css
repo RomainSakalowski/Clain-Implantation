@@ -1724,3 +1724,50 @@ body[data-tagline^="Prestations"] .card h3{
     text-align: center;
   }
 }
+
+/* Anti-flash sur images bleu foncé (mobile) */
+.pb-img,
+.domain-icon,
+.hero-links img,
+.thumb {
+  background: linear-gradient(180deg, rgba(11,35,38,0.90), rgba(15,47,51,0.90));
+}
+
+/* Image invisible tant qu'elle n'est pas chargée */
+.pb-img img,
+.domain-icon img,
+.hero-links img,
+.thumb img {
+  opacity: 0;
+  transition: opacity .18s ease;
+  display: block;
+}
+
+/* Quand chargée => visible */
+img.is-loaded {
+  opacity: 1 !important;
+}
+
+/* =================================================
+   Merci.html / Cookies modal : X parfaitement centré
+   ================================================= */
+
+   .cookie-modal__head{
+    position: relative; /* utile si un jour tu veux passer en absolute */
+    text-decoration: none;
+  }
+  
+  /* Le bouton X */
+  .cookie-x{
+    display: grid;        /* ✅ centre le × */
+    place-items: center;  /* ✅ centre parfait */
+    line-height: 1;       /* ✅ évite le décalage vertical */
+    padding: 0;           /* ✅ le centrage dépend uniquement width/height */
+    text-decoration: none !important; /* enlève le soulignement */   
+  }
+  
+  /* Optionnel : si tu veux un tout petit ajustement visuel */
+  .cookie-x{
+    transform: translateY(-3px);
+  }
+  

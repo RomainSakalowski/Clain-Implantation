@@ -125,3 +125,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { once: true });
   });
 });
+
+// Anti flash image (progressive jpeg / mobile)
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img").forEach((img) => {
+    if (img.complete && img.naturalWidth > 0) {
+      img.classList.add("is-loaded");
+      return;
+    }
+    img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true });
+    img.addEventListener("error", () => img.classList.add("is-loaded"), { once: true });
+  });
+});
