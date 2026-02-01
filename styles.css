@@ -1781,3 +1781,21 @@ body[data-tagline^="Merci"] #site-header{
 body[data-tagline^="Merci"]{
   overflow: hidden;
 }
+
+/* =================================================
+   MERCI – boutons centrés sur mobile
+   ================================================= */
+
+   @media (max-width: 600px){
+    body[data-tagline^="Merci"] .cookie-modal__actions{
+      justify-content: center;     /* centre horizontalement */
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;             /* autorise le retour à la ligne */
+    }
+  
+    body[data-tagline^="Merci"] .cookie-modal__actions .btn{
+      margin: 0;
+    }
+  }
+  
