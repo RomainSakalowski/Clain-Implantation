@@ -6,14 +6,14 @@
 
   <!-- Fix 1 : évite le flash blanc immédiatement -->
   <style>
-   html, body { margin: 0; background: #0f2f2f; }
-   body { opacity: 0; transition: opacity .15s ease; }
+    html, body { margin: 0; background: #0f2f2f; }
+    body { opacity: 0; transition: opacity .15s ease; }
     body.ready { opacity: 1; }
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('ready');
-   });
+    });
   </script>
 
   <title>Clain Implantation — Renseignements</title>
@@ -23,16 +23,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-
 </head>
 
 <body data-tagline="Renseignements • Infos utiles">
-      <!-- HEADER injecté (identique aux autres pages) -->
-      <div id="site-header"></div>
-      
+
+  <!-- HEADER injecté -->
+  <div id="site-header"></div>
+
   <main class="container">
+
     <section class="hero">
       <div class="hero-inner">
+
         <!-- TEXTE -->
         <div class="hero-text">
           <h2>Décrivez-nous votre besoin</h2>
@@ -58,25 +60,10 @@
 
           <p class="footer-text">Nous vous répondrons dans les plus brefs délais.</p>
 
-          <!-- ✅ Les icônes doivent être DANS hero-text (colonne gauche) -->
           <div class="hero-links">
-            <img
-              src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Caract%C3%A9ristiques/R%C3%A9activit%C3%A9%202.png"
-              alt="Intervention rapide"
-              loading="lazy"
-            />
-
-            <img
-              src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Caract%C3%A9ristiques/R%C3%A9activit%C3%A9%20vert.png"
-              alt="Réactivité"
-              loading="lazy"
-            />
-
-            <img
-            src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Caract%C3%A9ristiques/Collaboration.png"
-            alt="Réactivité"
-            loading="lazy"
-          />
+            <img src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Caract%C3%A9ristiques/R%C3%A9activit%C3%A9%202.png" alt="Intervention rapide" loading="lazy" />
+            <img src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Caract%C3%A9ristiques/R%C3%A9activit%C3%A9%20vert.png" alt="Réactivité" loading="lazy" />
+            <img src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Caract%C3%A9ristiques/Collaboration.png" alt="Collaboration" loading="lazy" />
           </div>
         </div>
 
@@ -89,6 +76,7 @@
             loading="lazy"
           />
         </div>
+
       </div>
     </section>
 
@@ -97,52 +85,77 @@
         <article class="card">
           <h3>Formulaire de demande de renseignements</h3>
 
-          <form class="form" action="#" method="post">
+          <!-- ✅ FORMULAIRE NETLIFY -->
+          <form
+            class="form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <!-- Obligatoire Netlify -->
+            <input type="hidden" name="form-name" value="contact" />
+
+            <!-- Anti-spam -->
+            <p hidden>
+              <label>
+                Ne pas remplir :
+                <input name="bot-field" />
+              </label>
+            </p>
+
             <div class="form-row">
               <div class="field">
                 <label for="nom">Nom</label>
-                <input id="nom" name="nom" placeholder="" />
+                <input id="nom" name="nom" required />
               </div>
+
               <div class="field">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="" />
+                <input id="email" name="email" type="email" required />
               </div>
             </div>
 
             <div class="form-row">
               <div class="field">
                 <label for="tel">Téléphone</label>
-                <input id="tel" name="tel" placeholder="" />
+                <input id="tel" name="tel" />
               </div>
+
               <div class="field">
-              <label for="secteur_input">Secteur</label>
-            
-              <!-- Custom select -->
-              <div class="cselect" data-name="secteur" id="secteurSelect">
-                <button type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
-                  <span class="cselect-value">Industrie</span>
-                  <span class="cselect-chev" aria-hidden="true">▾</span>
-                </button>
-            
-                <div class="cselect-list" role="listbox" tabindex="-1">
-                  <button type="button" class="cselect-option" role="option" data-value="Industrie">Industrie</button>
-                  <button type="button" class="cselect-option" role="option" data-value="Particulier">Particulier</button>
-                  <button type="button" class="cselect-option" role="option" data-value="Autre">Autre</button>
+                <label for="secteur_input">Secteur</label>
+
+                <div class="cselect" data-name="secteur" id="secteurSelect">
+                  <button type="button" class="cselect-btn">
+                    <span class="cselect-value">Industrie</span>
+                    <span class="cselect-chev">▾</span>
+                  </button>
+
+                  <div class="cselect-list">
+                    <button type="button" class="cselect-option" data-value="Industrie">Industrie</button>
+                    <button type="button" class="cselect-option" data-value="Particulier">Particulier</button>
+                    <button type="button" class="cselect-option" data-value="Autre">Autre</button>
+                  </div>
+
+                  <input type="hidden" name="secteur" id="secteur_input" value="Industrie" />
                 </div>
-            
-                <!-- Champ réellement envoyé par le formulaire -->
-                <input type="hidden" name="secteur" id="secteur_input" value="Industrie">
               </div>
-            </div>            
+            </div>
 
             <div class="field">
               <label for="message">Besoin / Contexte</label>
-              <textarea id="message" name="message" placeholder="Expliquez votre besoin, contraintes, délais, etc."></textarea>
+              <textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Expliquez votre besoin, contraintes, délais, etc."
+              ></textarea>
             </div>
 
             <div class="hero-actions">
-              <button class="btn" type="submit">Envoyer</button>
+              <button class="btn primary" type="submit">Envoyer</button>
             </div>
+
           </form>
         </article>
       </div>
@@ -156,15 +169,14 @@
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="#" id="manage-cookies">Gérer les cookies</a>
         <a href="renseignement.html">Contact</a>
-      </div>           
+      </div>
     </div>
   </footer>
 
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css" />
   <script src="./load-header.js" defer></script>
   <script src="./main.js" defer></script>
   <script src="./consent-manager.js" defer></script>
-  
-  
+
 </body>
 </html>
