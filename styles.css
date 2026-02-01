@@ -1771,3 +1771,13 @@ img.is-loaded {
     transform: translateY(-3px);
   }
   
+  /* =================================================
+   Page MERCI : masquer le header en arrière-plan
+   ================================================= */
+
+body[data-tagline^="Merci"] #site-header{
+  display: none !important;
+}
+body[data-tagline^="Merci"]{
+  overflow: hidden;
+}
