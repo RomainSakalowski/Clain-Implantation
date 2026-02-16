@@ -6,6 +6,9 @@ fetch("./header.html")
 
     host.innerHTML = html;
 
+    // ✅ applique le fade/anti-flash aux images injectées (logo header)
+    if (window.applyImageFade) window.applyImageFade(host);
+
     // ✅ Sous-titre selon la page (défini dans <body data-tagline="...">)
     const tagline = document.getElementById('pageTagline');
     const pageTag = document.body.getAttribute('data-tagline');

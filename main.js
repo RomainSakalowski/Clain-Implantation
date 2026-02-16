@@ -102,38 +102,39 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
 
 // =========================
-// Images – anti flash bleu / placeholder mobile (iOS & Android)
+// Images – anti flash (iOS/Safari) + fade-in via .is-loaded
+// (✅ corrigé : doublon supprimé + decode() pour éviter le flash)
 // =========================
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('img').forEach((img) => {
-    img.classList.add('img-fade');
+window.applyImageFade = (root = document) => {
+  const markLoaded = (img) => img.classList.add('is-loaded');
+  const markError  = (img) => img.classList.add('is-error');
+
+  const handle = (img) => {
+    if (img.classList.contains('is-loaded')) return;
 
     // Image déjà en cache
     if (img.complete && img.naturalWidth > 0) {
-      img.classList.add('is-loaded');
+      if (img.decode) img.decode().catch(() => {}).finally(() => markLoaded(img));
+      else markLoaded(img);
       return;
     }
 
     // Chargement réel
     img.addEventListener('load', () => {
-      img.classList.add('is-loaded');
+      if (img.decode) img.decode().catch(() => {}).finally(() => markLoaded(img));
+      else markLoaded(img);
     }, { once: true });
 
-    // Sécurité si erreur
+    // Sécurité si erreur (évite image invisible)
     img.addEventListener('error', () => {
-      img.classList.add('is-loaded');
+      markError(img);
+      markLoaded(img);
     }, { once: true });
-  });
-});
+  };
 
-// Anti flash image (progressive jpeg / mobile)
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("img").forEach((img) => {
-    if (img.complete && img.naturalWidth > 0) {
-      img.classList.add("is-loaded");
-      return;
-    }
-    img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true });
-    img.addEventListener("error", () => img.classList.add("is-loaded"), { once: true });
-  });
+  root.querySelectorAll('img').forEach(handle);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.applyImageFade(document);
 });

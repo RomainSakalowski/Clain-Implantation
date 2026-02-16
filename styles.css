@@ -1,7 +1,7 @@
 /* =========================
    Clain Implantation Theme
    Duck teal + white line art + textured cream cards
-   Version "plus claire" (même palette / mêmes polices / même structure)
+   Version "plus claire" (même palette / mêmes polices / mêmes structures)
    ========================= */
 
    :root{
@@ -44,6 +44,10 @@
   
     --muted-on-teal: rgba(247,251,251,0.78);
     --muted-on-cream: rgba(8,18,19,0.78);
+  
+    /* ✅ AJOUT (placeholder images cohérent) */
+    --img-placeholder: linear-gradient(180deg, rgba(11,35,38,0.90), rgba(15,47,51,0.90));
+    --img-placeholder-solid: var(--teal-900);
   }
   
   *{ box-sizing: border-box; }
@@ -326,9 +330,10 @@
     border-radius: calc(var(--radius) - 6px);
     border: 1px solid var(--line-soft);
     overflow: hidden;
-    background:
-      var(--grain),
-      linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  
+    /* ✅ MODIF : placeholder cohérent pendant le chargement */
+    background: var(--img-placeholder);
+    background-color: var(--img-placeholder-solid);
   }
   
   .hero-art .bizcard-img{
@@ -438,16 +443,15 @@
     overflow: hidden;
     margin-bottom: 10px;
   
-    background:
-      var(--grain),
-      linear-gradient(180deg, rgba(11,35,38,0.90), rgba(15,47,51,0.90));
+    /* ✅ MODIF : placeholder cohérent pendant le chargement */
+    background: var(--img-placeholder);
+    background-color: var(--img-placeholder-solid);
+  
     display: grid;
     place-items: center;
-  }
-  .thumb{
     position: relative;
-    overflow: hidden;
   }
+  
   .thumb img{
     width: 100%;
     height: 100%;
@@ -561,6 +565,7 @@
     display: flex;
     justify-content: center;
   }
+  
   .home-center-img{
     width: 100%;
     max-width: var(--center-w);
@@ -759,30 +764,31 @@
   body.page-home .home-text-badge .hero-text p:last-child{
     text-align-last: left;
   }
+  
   /* Page Contact : icônes (3 petites images) => taille fixe */
-body[data-tagline^="Renseignements"] .hero-links img{
-  width: auto !important;
-  height: 118px !important;
-  max-width: 140px;
-}
-/* =================================================
-   CONTACT (Renseignements) : 3 badges en bas, taille fixe
-   ================================================= */
-
-   body[data-tagline^="Renseignements"] .hero-links{
+  body[data-tagline^="Renseignements"] .hero-links img{
+    width: auto !important;
+    height: 118px !important;
+    max-width: 140px;
+  }
+  
+  /* =================================================
+     CONTACT (Renseignements) : 3 badges en bas, taille fixe
+     ================================================= */
+  body[data-tagline^="Renseignements"] .hero-links{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
     align-items: center;
     justify-items: center;
   
-    margin-top: 5rem;   /* ajuste si besoin */
-    margin-left: 0;       /* annule ton ancien décalage */
+    margin-top: 5rem;
+    margin-left: 0;
   }
   
   /* Les 3 images -> même taille, comme sur la capture */
   body[data-tagline^="Renseignements"] .hero-links img{
-    width: 220px;         /* ✅ taille “badge” */
+    width: 220px;
     height: 140px;
     max-width: 100%;
     object-fit: contain;
@@ -790,6 +796,10 @@ body[data-tagline^="Renseignements"] .hero-links img{
     border-radius: 18px;
     opacity: 0.95;
     transition: transform 0.2s ease, opacity 0.2s ease;
+  
+    /* ✅ MODIF : placeholder cohérent */
+    background: var(--img-placeholder);
+    background-color: var(--img-placeholder-solid);
   }
   
   body[data-tagline^="Renseignements"] .hero-links img:hover{
@@ -808,26 +818,23 @@ body[data-tagline^="Renseignements"] .hero-links img{
       height: auto;
     }
   }
-
+  
   /* =================================================
-   Cards crème : listes toujours en noir (lisible)
-   ================================================= */
-
-.card ul,
-.card li{
-  color: var(--muted-on-cream);
-}
-
-.card li::marker{
-  color: var(--muted-on-cream);
-}
-
-/* =================================================
-   PRESTATIONS / RÉALISATIONS : HERO pleine largeur
-   ================================================= */
-
-   body[data-tagline^="Prestations"] .hero-inner{
-    grid-template-columns: 1fr; /* une seule colonne */
+     Cards crème : listes toujours en noir (lisible)
+     ================================================= */
+  .card ul,
+  .card li{
+    color: var(--muted-on-cream);
+  }
+  .card li::marker{
+    color: var(--muted-on-cream);
+  }
+  
+  /* =================================================
+     PRESTATIONS / RÉALISATIONS : HERO pleine largeur
+     ================================================= */
+  body[data-tagline^="Prestations"] .hero-inner{
+    grid-template-columns: 1fr;
   }
   
   body[data-tagline^="Prestations"] .hero-text{
@@ -848,154 +855,157 @@ body[data-tagline^="Renseignements"] .hero-links img{
   }
   
   /* =================================================
-   PRESENTATION : mise en page exactement comme la capture
-   ================================================= */
-
-body.page-presentation .presentation-stack{
-  padding-top: 10px; /* un peu d'air sous le hero */
-}
-
-/* HERO de présentation : 1 colonne (pas d'image à droite) */
-body.page-presentation .hero-inner.hero-only-text{
-  grid-template-columns: 1fr !important;
-}
-
-/* Les grandes cards crème empilées (1 par ligne) */
-body.page-presentation .presentation-badge{
-  grid-column: span 12;
-  padding: 18px 18px;
-}
-
-/* Contenu intérieur : texte à gauche / 2 images à droite */
-body.page-presentation .pb-inner{
-  display: grid;
-  grid-template-columns: 1fr 280px;   /* colonne images comme sur ta capture */
-  gap: 16px;
-  align-items: start;
-}
-
-/* Texte */
-body.page-presentation .pb-text h3{
-  margin-top: 0;
-}
-
-body.page-presentation .pb-text p{
-  margin: 0 0 10px;
-  color: var(--muted-on-cream);
-  line-height: 1.55;
-}
-
-/* Liste : garde noir lisible comme tes badges */
-body.page-presentation .pb-list{
-  margin: 8px 0 0;
-  padding-left: 18px;
-  color: var(--muted-on-cream);
-}
-body.page-presentation .pb-list li{
-  margin: 7px 0;
-  line-height: 1.5;
-}
-
-/* Colonne images : 2 rectangles empilés */
-body.page-presentation .pb-media{
-  display: grid;
-  gap: 12px;
-  justify-items: end;   /* colle à droite visuellement */
-}
-
-/* “Cadre” image (tu remplaceras src + href) */
-body.page-presentation .pb-img{
-  width: 240px;            /* taille proche capture */
-  aspect-ratio: 4 / 2.6;   /* rectangles */
-  border-radius: 14px;
-  overflow: hidden;
-  border: 2px solid rgba(8,18,19,0.22);
-  background: rgba(43,102,217,0.85); /* fallback si image absente */
-  display: block;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-}
-
-body.page-presentation .pb-img img{
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-/* Responsive : sur mobile, images passent dessous */
-@media (max-width: 820px){
+     PRESENTATION : mise en page exactement comme la capture
+     ================================================= */
+  body.page-presentation .presentation-stack{
+    padding-top: 10px;
+  }
+  
+  /* HERO de présentation : 1 colonne (pas d'image à droite) */
+  body.page-presentation .hero-inner.hero-only-text{
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Les grandes cards crème empilées (1 par ligne) */
+  body.page-presentation .presentation-badge{
+    grid-column: span 12;
+    padding: 18px 18px;
+  }
+  
+  /* Contenu intérieur : texte à gauche / 2 images à droite */
   body.page-presentation .pb-inner{
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 16px;
+    align-items: start;
   }
+  
+  /* Texte */
+  body.page-presentation .pb-text h3{
+    margin-top: 0;
+  }
+  
+  body.page-presentation .pb-text p{
+    margin: 0 0 10px;
+    color: var(--muted-on-cream);
+    line-height: 1.55;
+  }
+  
+  /* Liste : garde noir lisible comme tes badges */
+  body.page-presentation .pb-list{
+    margin: 8px 0 0;
+    padding-left: 18px;
+    color: var(--muted-on-cream);
+  }
+  body.page-presentation .pb-list li{
+    margin: 7px 0;
+    line-height: 1.5;
+  }
+  
+  /* Colonne images : 2 rectangles empilés */
   body.page-presentation .pb-media{
-    justify-items: start;
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap: 12px;
+    justify-items: end;
   }
+  
+  /* “Cadre” image (tu remplaceras src + href) */
   body.page-presentation .pb-img{
+    width: 240px;
+    aspect-ratio: 4 / 2.6;
+    border-radius: 14px;
+    overflow: hidden;
+  
+    /* ✅ MODIF : placeholder cohérent (et on enlève le fallback bleu saturé) */
+    background: var(--img-placeholder);
+    background-color: var(--img-placeholder-solid);
+  
+    display: block;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  }
+  
+  body.page-presentation .pb-img img{
     width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
   }
-}
-@media (max-width: 520px){
-  body.page-presentation .pb-media{
-    grid-template-columns: 1fr;
+  
+  /* Responsive : sur mobile, images passent dessous */
+  @media (max-width: 820px){
+    body.page-presentation .pb-inner{
+      grid-template-columns: 1fr;
+    }
+    body.page-presentation .pb-media{
+      justify-items: start;
+      grid-template-columns: 1fr 1fr;
+    }
+    body.page-presentation .pb-img{
+      width: 100%;
+    }
   }
-}
-/* =================================================
-   BADGES : typographie identique à la page d’accueil
-   ================================================= */
-
-/* Texte général des badges */
-.card,
-.presentation-badge{
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  color: var(--ink);
-  line-height: 1.6;
-}
-
-/* Titres des badges = mêmes règles que h2/h3 hero */
-.card h3,
-.presentation-badge h3{
-  margin: 0 0 12px;
-  font-size: clamp(1.25rem, 2.2vw, 1.45rem);
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  color: var(--ink);
-}
-
-/* Paragraphes = même rendu que hero-text */
-.card p,
-.presentation-badge p{
-  margin: 0 0 1.1rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--muted-on-cream);
-}
-
-/* Listes = cohérentes avec le texte */
-.card ul,
-.presentation-badge ul{
-  margin: 0.6rem 0 0 1.1rem;
-  padding: 0;
-  color: var(--muted-on-cream);
-}
-
-.card li,
-.presentation-badge li{
-  margin-bottom: 0.5rem;
-  line-height: 1.55;
-}
-
-/* Puces sobres (comme sur la home) */
-.card li::marker,
-.presentation-badge li::marker{
-  color: rgba(8,18,19,0.55);
-}
-/* =================================================
-   PRESENTATION – Badge principal
-   Typo STRICTEMENT identique à la home
-   ================================================= */
-
-   .hero-text-like h2{
+  @media (max-width: 520px){
+    body.page-presentation .pb-media{
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* =================================================
+     BADGES : typographie identique à la page d’accueil
+     ================================================= */
+  
+  /* Texte général des badges */
+  .card,
+  .presentation-badge{
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  
+  /* Titres des badges = mêmes règles que h2/h3 hero */
+  .card h3,
+  .presentation-badge h3{
+    margin: 0 0 12px;
+    font-size: clamp(1.25rem, 2.2vw, 1.45rem);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--ink);
+  }
+  
+  /* Paragraphes = même rendu que hero-text */
+  .card p,
+  .presentation-badge p{
+    margin: 0 0 1.1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--muted-on-cream);
+  }
+  
+  /* Listes = cohérentes avec le texte */
+  .card ul,
+  .presentation-badge ul{
+    margin: 0.6rem 0 0 1.1rem;
+    padding: 0;
+    color: var(--muted-on-cream);
+  }
+  
+  .card li,
+  .presentation-badge li{
+    margin-bottom: 0.5rem;
+    line-height: 1.55;
+  }
+  
+  /* Puces sobres (comme sur la home) */
+  .card li::marker,
+  .presentation-badge li::marker{
+    color: rgba(8,18,19,0.55);
+  }
+  
+  /* =================================================
+     PRESENTATION – Badge principal
+     Typo STRICTEMENT identique à la home
+     ================================================= */
+  .hero-text-like h2{
     margin: 0 0 12px;
     font-size: clamp(1.6rem, 3vw, 2.1rem);
     font-weight: 700;
@@ -1020,367 +1030,367 @@ body.page-presentation .pb-img img{
   .hero-text-like p:last-child{
     margin-bottom: 0;
   }
+  
   /* =========================================
-   PRÉSENTATION – Hero pleine largeur (1 colonne)
-   ========================================= */
-
-.page-presentation .hero-inner{
-  grid-template-columns: 1fr; /* ✅ une seule colonne */
-}
-
-/* Le texte prend toute la largeur */
-.page-presentation .hero-text{
-  max-width: 100%;
-  width: 100%;
-}
-
-/* Texte justifié comme sur la home */
-.page-presentation .hero-text p{
-  max-width: 100%;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-/* Dernière ligne plus naturelle */
-.page-presentation .hero-text p:last-child{
-  text-align-last: left;
-}
-
-/* Décalage horizontal entre les boutons du hero */
-.hero-actions{
-  display: flex;
-  gap: 16px; /* ⬅️ ajuste ici (ex : 12px, 20px…) */
-}
-
-/* =========================
-   PRESENTATION : images (badges du bas) sans contour + hover "lift"
-   ========================= */
-
-/* La tuile cliquable (ton <a class="pb-img">) */
-body.page-presentation .pb-img{
-  display: block;
-  border: none !important;      /* ✅ supprime tout contour */
-  outline: none;
-  box-shadow: none;
-  transform: translateZ(0);
-  transition: transform .18s ease, filter .18s ease;
-}
-
-/* L'image à l'intérieur */
-body.page-presentation .pb-img img{
-  display: block;
-  width: 100%;
-  height: auto;
-  border: none !important;      /* ✅ supprime tout contour */
-  outline: none;
-  box-shadow: none;
-}
-
-/* Hover : se soulève légèrement (comme sur contact) */
-body.page-presentation .pb-img:hover{
-  transform: translateY(-2px);
-  filter: saturate(1.05);
-}
-
-/* Accessibilité : effet identique au clavier */
-body.page-presentation .pb-img:focus-visible{
-  transform: translateY(-2px);
-  outline: 3px solid rgba(255,255,255,0.22);
-  outline-offset: 4px;
-  border-radius: 12px; /* si ton image est arrondie */
-}
-
-/* =================================================
-   PRESTATIONS : mise en page spécifique (NE TOUCHE PAS aux autres pages)
-   ================================================= */
-
-/* HERO : 1 seule colonne + texte pleine largeur + justifié */
-body.page-prestations .hero-inner.hero-only-text{
-  grid-template-columns: 1fr !important;
-}
-
-body.page-prestations .hero-text{
-  max-width: 100%;
-  width: 100%;
-}
-
-body.page-prestations .hero-text p{
-  max-width: 100%;
-  width: 100%;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-body.page-prestations .hero-text p:last-child{
-  text-align-last: left;
-}
-
-/* =================================================
-   PRESTATIONS : Badge "Nos domaines d'intervention"
-   Texte à gauche + 5 images à droite (décalées)
-   ================================================= */
-
-body.page-prestations .card-domains{
-  grid-column: span 12;
-  padding: 18px;
-}
-
-body.page-prestations .domains-inner{
-  display: grid;
-  grid-template-columns: 1fr 320px; /* colonne images à droite */
-  gap: 18px;
-  align-items: start;
-}
-
-body.page-prestations .domains-text h3{
-  margin: 0 0 10px;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-body.page-prestations .domains-group{
-  margin: 0 0 12px;
-}
-
-body.page-prestations .domains-title{
-  margin: 0 0 6px;
-  color: var(--ink);
-  line-height: 1.35;
-}
-
-body.page-prestations .domains-desc{
-  margin: 0;
-  color: var(--muted-on-cream);
-  line-height: 1.55;
-}
-
-/* Colonne images (5 visuels) */
-body.page-prestations .domains-media{
-  display: grid;
-  gap: 12px;
-  justify-items: end; /* colle à droite */
-}
-
-/* Les tuiles image (tu remplaceras les URLs) */
-body.page-prestations .domain-icon{
-  display: block;
-  width: 160px;
-  border-radius: 14px;
-  overflow: hidden;
-  text-decoration: none;
-  border: none;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
-  transform: translateZ(0);
-  transition: transform .18s ease, filter .18s ease;
-}
-
-body.page-prestations .domain-icon img{
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border: none;
-}
-
-/* Hover "lift" léger */
-body.page-prestations .domain-icon:hover{
-  transform: translateY(-2px);
-  filter: saturate(1.05);
-}
-
-body.page-prestations .domain-icon:focus-visible{
-  transform: translateY(-2px);
-  outline: 3px solid rgba(27,74,80,0.25);
-  outline-offset: 4px;
-}
-
-/* Décalages (comme ta capture) */
-body.page-prestations .domain-icon.stagger.s1{ margin-right: 0px; }
-body.page-prestations .domain-icon.stagger.s2{ margin-right: 22px; }
-body.page-prestations .domain-icon.stagger.s3{ margin-right: 0px; }
-body.page-prestations .domain-icon.stagger.s4{ margin-right: 22px; }
-body.page-prestations .domain-icon.stagger.s5{ margin-right: 0px; }
-
-/* Responsive */
-@media (max-width: 980px){
-  body.page-prestations .domains-inner{
+     PRÉSENTATION – Hero pleine largeur (1 colonne)
+     ========================================= */
+  .page-presentation .hero-inner{
     grid-template-columns: 1fr;
   }
-  body.page-prestations .domains-media{
-    justify-items: start;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  body.page-prestations .domain-icon{
+  
+  /* Le texte prend toute la largeur */
+  .page-presentation .hero-text{
+    max-width: 100%;
     width: 100%;
   }
-  body.page-prestations .domain-icon.stagger{
-    margin-right: 0 !important;
+  
+  /* Texte justifié comme sur la home */
+  .page-presentation .hero-text p{
+    max-width: 100%;
+    text-align: justify;
+    text-justify: inter-word;
   }
-}
-@media (max-width: 520px){
+  
+  /* Dernière ligne plus naturelle */
+  .page-presentation .hero-text p:last-child{
+    text-align-last: left;
+  }
+  
+  /* Décalage horizontal entre les boutons du hero */
+  .hero-actions{
+    display: flex;
+    gap: 16px;
+  }
+  
+  /* =========================
+     PRESENTATION : images (badges du bas) sans contour + hover "lift"
+     ========================= */
+  
+  /* La tuile cliquable (ton <a class="pb-img">) */
+  body.page-presentation .pb-img{
+    border: none !important;
+    outline: none;
+    transform: translateZ(0);
+    transition: transform .18s ease, filter .18s ease;
+  }
+  
+  /* L'image à l'intérieur */
+  body.page-presentation .pb-img img{
+    display: block;
+    width: 100%;
+    height: auto;
+    border: none !important;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* Hover : se soulève légèrement (comme sur contact) */
+  body.page-presentation .pb-img:hover{
+    transform: translateY(-2px);
+    filter: saturate(1.05);
+  }
+  
+  /* Accessibilité : effet identique au clavier */
+  body.page-presentation .pb-img:focus-visible{
+    transform: translateY(-2px);
+    outline: 3px solid rgba(255,255,255,0.22);
+    outline-offset: 4px;
+    border-radius: 12px;
+  }
+  
+  /* =================================================
+     PRESTATIONS : mise en page spécifique (NE TOUCHE PAS aux autres pages)
+     ================================================= */
+  
+  /* HERO : 1 seule colonne + texte pleine largeur + justifié */
+  body.page-prestations .hero-inner.hero-only-text{
+    grid-template-columns: 1fr !important;
+  }
+  
+  body.page-prestations .hero-text{
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  body.page-prestations .hero-text p{
+    max-width: 100%;
+    width: 100%;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
+  body.page-prestations .hero-text p:last-child{
+    text-align-last: left;
+  }
+  
+  /* =================================================
+     PRESTATIONS : Badge "Nos domaines d'intervention"
+     Texte à gauche + 5 images à droite (décalées)
+     ================================================= */
+  
+  body.page-prestations .card-domains{
+    grid-column: span 12;
+    padding: 18px;
+  }
+  
+  body.page-prestations .domains-inner{
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 18px;
+    align-items: start;
+  }
+  
+  body.page-prestations .domains-text h3{
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  
+  body.page-prestations .domains-group{
+    margin: 0 0 12px;
+  }
+  
+  body.page-prestations .domains-title{
+    margin: 0 0 6px;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  
+  body.page-prestations .domains-desc{
+    margin: 0;
+    color: var(--muted-on-cream);
+    line-height: 1.55;
+  }
+  
+  /* Colonne images (5 visuels) */
   body.page-prestations .domains-media{
-    grid-template-columns: 1fr;
+    display: grid;
+    gap: 12px;
+    justify-items: end;
   }
-}
-
-/* =================================================
-   PRESTATIONS : Pastille centrée "Notre méthode de travail"
-   ================================================= */
-
-body.page-prestations .method-pill-wrap{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 0 0;
-}
-
-body.page-prestations .method-pill{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px 16px;
-  border-radius: 14px;
-
-  background:
-    var(--grain),
-    linear-gradient(180deg, var(--cream-50), #f4f3ef);
-
-  border: 1px solid rgba(8,18,19,0.14);
-  box-shadow: var(--card-shadow);
-
-  color: var(--ink);
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  min-width: min(520px, 92vw); /* aspect centré et "barre" */
-  text-align: center;
-}
-
-/* Un peu d’air sous la pastille avant les 3 cartes */
-body.page-prestations .method-grid{
-  padding-top: 10px;
-}
-
-/* =================================================
-   PRESTATIONS : cohérence typographique dans les cards
-   (lists noires lisibles)
-   ================================================= */
-
-body.page-prestations .card ul,
-body.page-prestations .card li{
-  color: var(--muted-on-cream);
-}
-body.page-prestations .card li::marker{
-  color: rgba(8,18,19,0.55);
-}
-/* PRESTATIONS – titre principal du hero (identique à Présentation) */
-.page-prestations .hero h2{
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
-  font-weight: 700;
-  letter-spacing: 0.3px;
-}
-
-/* PRESTATIONS – titres de badges principaux */
-body[data-tagline^="Prestations"] .card h3{
-  font-size: clamp(1.3rem, 2.6vw, 1.55rem);
-  font-weight: 700;
-  letter-spacing: 0.25px;
-}
-
-/* =========================
-   FOOTER LINKS : pas de soulignement / pas de ligne
-   ========================= */
-.site-footer .footer-links a{
-  color: rgba(247,251,251,0.74);
-  text-decoration: none;
-  border-bottom: none;           /* enlève la ligne pointillée */
-  margin-left: 12px;
-  opacity: 0.85;
-}
-
-.site-footer .footer-links a:hover{
-  color: var(--text-on-teal);
-  opacity: 1;
-}
-
-/* Empêche tout style décoratif global sur les liens (si tu en as ailleurs) */
-.site-footer .footer-links a::after,
-.site-footer .footer-links a::before{
-  content: none !important;
-  display: none !important;
-}
-
-/* =========================
-   Page Mentions légales
-   ========================= */
-
-/* Le wrapper (dans le container) */
-.legal-page{
-  padding: 24px 0 64px;
-}
-
-/* ✅ Contraint la largeur et crée les marges latérales */
-.legal-page .legal-grid{
-  width: min(1100px, calc(100% - 64px));
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.legal-title{
-  text-align: center;
-  margin: 0 0 28px;
-}
-
-/* 2 colonnes */
-.legal-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.legal-block + .legal-block{
-  margin-top: 26px;
-}
-
-.legal-block h2{
-  margin: 0 0 10px;
-}
-
-.legal-text{
-  line-height: 1.8;
-}
-
-.legal-text p{
-  margin: 0 0 12px;
-}
-
-.legal-text a{
-  text-decoration: underline;
-}
-
-.legal-note{
-  opacity: 0.85;
-  font-size: 0.95em;
-}
-
-/* Responsive */
-@media (max-width: 900px){
-  .legal-grid{
-    grid-template-columns: 1fr;
-    gap: 28px;
+  
+  /* Les tuiles image (tu remplaceras les URLs) */
+  body.page-prestations .domain-icon{
+    display: block;
+    width: 160px;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    border: none;
+  
+    /* ✅ MODIF : placeholder cohérent */
+    background: var(--img-placeholder);
+    background-color: var(--img-placeholder-solid);
+  
+    box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+    transform: translateZ(0);
+    transition: transform .18s ease, filter .18s ease;
   }
-
+  
+  body.page-prestations .domain-icon img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border: none;
+  }
+  
+  /* Hover "lift" léger */
+  body.page-prestations .domain-icon:hover{
+    transform: translateY(-2px);
+    filter: saturate(1.05);
+  }
+  
+  body.page-prestations .domain-icon:focus-visible{
+    transform: translateY(-2px);
+    outline: 3px solid rgba(27,74,80,0.25);
+    outline-offset: 4px;
+  }
+  
+  /* Décalages (comme ta capture) */
+  body.page-prestations .domain-icon.stagger.s1{ margin-right: 0px; }
+  body.page-prestations .domain-icon.stagger.s2{ margin-right: 22px; }
+  body.page-prestations .domain-icon.stagger.s3{ margin-right: 0px; }
+  body.page-prestations .domain-icon.stagger.s4{ margin-right: 22px; }
+  body.page-prestations .domain-icon.stagger.s5{ margin-right: 0px; }
+  
+  /* Responsive */
+  @media (max-width: 980px){
+    body.page-prestations .domains-inner{
+      grid-template-columns: 1fr;
+    }
+    body.page-prestations .domains-media{
+      justify-items: start;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    body.page-prestations .domain-icon{
+      width: 100%;
+    }
+    body.page-prestations .domain-icon.stagger{
+      margin-right: 0 !important;
+    }
+  }
+  @media (max-width: 520px){
+    body.page-prestations .domains-media{
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* =================================================
+     PRESTATIONS : Pastille centrée "Notre méthode de travail"
+     ================================================= */
+  body.page-prestations .method-pill-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 0 0;
+  }
+  
+  body.page-prestations .method-pill{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    padding: 10px 16px;
+    border-radius: 14px;
+  
+    background:
+      var(--grain),
+      linear-gradient(180deg, var(--cream-50), #f4f3ef);
+  
+    border: 1px solid rgba(8,18,19,0.14);
+    box-shadow: var(--card-shadow);
+  
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    min-width: min(520px, 92vw);
+    text-align: center;
+  }
+  
+  /* Un peu d’air sous la pastille avant les 3 cartes */
+  body.page-prestations .method-grid{
+    padding-top: 10px;
+  }
+  
+  /* =================================================
+     PRESTATIONS : cohérence typographique dans les cards
+     (lists noires lisibles)
+     ================================================= */
+  body.page-prestations .card ul,
+  body.page-prestations .card li{
+    color: var(--muted-on-cream);
+  }
+  body.page-prestations .card li::marker{
+    color: rgba(8,18,19,0.55);
+  }
+  
+  /* PRESTATIONS – titre principal du hero (identique à Présentation) */
+  .page-prestations .hero h2{
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  
+  /* PRESTATIONS – titres de badges principaux */
+  body[data-tagline^="Prestations"] .card h3{
+    font-size: clamp(1.3rem, 2.6vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: 0.25px;
+  }
+  
+  /* =========================
+     FOOTER LINKS : pas de soulignement / pas de ligne
+     ========================= */
+  .site-footer .footer-links a{
+    color: rgba(247,251,251,0.74);
+    text-decoration: none;
+    border-bottom: none;
+    margin-left: 12px;
+    opacity: 0.85;
+  }
+  
+  .site-footer .footer-links a:hover{
+    color: var(--text-on-teal);
+    opacity: 1;
+  }
+  
+  /* Empêche tout style décoratif global sur les liens (si tu en as ailleurs) */
+  .site-footer .footer-links a::after,
+  .site-footer .footer-links a::before{
+    content: none !important;
+    display: none !important;
+  }
+  
+  /* =========================
+     Page Mentions légales
+     ========================= */
+  .legal-page{
+    padding: 24px 0 64px;
+  }
+  
+  /* ✅ Contraint la largeur et crée les marges latérales */
   .legal-page .legal-grid{
-    width: calc(100% - 32px); /* 16px de marge de chaque côté sur mobile */
+    width: min(1100px, calc(100% - 64px));
+    margin: 0 auto;
+    box-sizing: border-box;
   }
-}
-/* =========================
-   Cookies (bandeau + modal) – cohérent avec le thème
-   ========================= */
-
-   .cookie-banner{
+  
+  .legal-title{
+    text-align: center;
+    margin: 0 0 28px;
+  }
+  
+  /* 2 colonnes */
+  .legal-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  
+  .legal-block + .legal-block{
+    margin-top: 26px;
+  }
+  
+  .legal-block h2{
+    margin: 0 0 10px;
+  }
+  
+  .legal-text{
+    line-height: 1.8;
+  }
+  
+  .legal-text p{
+    margin: 0 0 12px;
+  }
+  
+  .legal-text a{
+    text-decoration: underline;
+  }
+  
+  .legal-note{
+    opacity: 0.85;
+    font-size: 0.95em;
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px){
+    .legal-grid{
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  
+    .legal-page .legal-grid{
+      width: calc(100% - 32px);
+    }
+  }
+  
+  /* =========================
+     Cookies (bandeau + modal) – cohérent avec le thème
+     ========================= */
+  .cookie-banner{
     position: fixed;
     left: 16px;
     right: 16px;
@@ -1553,76 +1563,72 @@ body[data-tagline^="Prestations"] .card h3{
       justify-content: flex-start;
     }
   }
+  
   /* Lien gérer les cookies */
-.footer-links a#manage-cookies {
-  cursor: pointer;
-}
-/* Cookies: s'assure que l'attribut hidden masque vraiment */
-.cookie-banner[hidden],
-.cookie-modal[hidden]{
-  display: none !important;
-}
-/* Mentions légales – lien hébergeur */
-.legal-page a {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.legal-page a:hover {
-  opacity: 0.85;
-}
-/* =========================
-   Cookie switch – état ACTIF (accentué)
-   ========================= */
-
-/* Fond du switch quand activé */
-.cookie-switch input:checked + .cookie-slider{
-  background:
-    linear-gradient(135deg, #f2d6b3, #ffffff);
-  border-color: rgba(255,255,255,0.45);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.35) inset,
-    0 0 10px rgba(242,214,179,0.45);
-}
-
-/* Bouton rond quand activé */
-.cookie-switch input:checked + .cookie-slider::after{
-  background: #ffffff;
-  box-shadow:
-    0 2px 6px rgba(0,0,0,0.35);
-}
-
-/* Animation douce (optionnel mais très clean) */
-.cookie-slider{
-  transition: background 0.22s ease, box-shadow 0.22s ease;
-}
-
-.cookie-slider::after{
-  transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
-}
-/* =========================
-   Cookie – bouton Enregistrer
-   ========================= */
-
-   #cookie-save{
-    color: #ffffff;               /* texte blanc */
+  .footer-links a#manage-cookies {
+    cursor: pointer;
   }
   
-  /* optionnel : assurer le blanc même au hover/focus */
+  /* Cookies: s'assure que l'attribut hidden masque vraiment */
+  .cookie-banner[hidden],
+  .cookie-modal[hidden]{
+    display: none !important;
+  }
+  
+  /* Mentions légales – lien hébergeur */
+  .legal-page a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .legal-page a:hover {
+    opacity: 0.85;
+  }
+  
+  /* =========================
+     Cookie switch – état ACTIF (accentué)
+     ========================= */
+  .cookie-switch input:checked + .cookie-slider{
+    background:
+      linear-gradient(135deg, #f2d6b3, #ffffff);
+    border-color: rgba(255,255,255,0.45);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.35) inset,
+      0 0 10px rgba(242,214,179,0.45);
+  }
+  
+  .cookie-switch input:checked + .cookie-slider::after{
+    background: #ffffff;
+    box-shadow:
+      0 2px 6px rgba(0,0,0,0.35);
+  }
+  
+  .cookie-slider{
+    transition: background 0.22s ease, box-shadow 0.22s ease;
+  }
+  .cookie-slider::after{
+    transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+  }
+  
+  /* =========================
+     Cookie – bouton Enregistrer
+     ========================= */
+  #cookie-save{
+    color: #ffffff;
+  }
   #cookie-save:hover,
   #cookie-save:focus{
     color: #ffffff;
   }
-
-/* =========================
-   Header – layout mobile FINAL
-   ========================= */
-   @media (max-width: 760px){
-
+  
+  /* =========================
+     Header – layout mobile FINAL
+     ========================= */
+  @media (max-width: 760px){
     .header-inner{
       display: grid;
-      grid-template-columns: 1fr auto;   /* logo | menu */
-      grid-template-rows: auto auto;     /* ligne 1 / ligne 2 */
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
       grid-template-areas:
         "logo menu"
         "tagline tagline";
@@ -1643,7 +1649,7 @@ body[data-tagline^="Prestations"] .card h3{
     .menu{
       grid-area: menu;
       justify-self: end;
-      align-self: center;   /* ✅ aligné horizontalement avec le logo */
+      align-self: center;
     }
   
     /* Tagline en dessous */
@@ -1656,18 +1662,17 @@ body[data-tagline^="Prestations"] .card h3{
       font-size: 0.9rem;
     }
   }
-    
-/* =================================================
-   Fond uniforme entre header et footer (même couleur qu'avant)
-   ================================================= */
-
-   html{
-    background: #1a4a4a;  /* ✅ ta couleur de fond du thème */
+  
+  /* =================================================
+     Fond uniforme entre header et footer (même couleur qu'avant)
+     ================================================= */
+  html{
+    background: #1a4a4a;
   }
   
   body{
     position: relative;
-    background: transparent; /* la couleur est portée par html */
+    background: transparent;
   }
   
   /* Voile TRÈS léger : uniformise sans assombrir */
@@ -1678,92 +1683,38 @@ body[data-tagline^="Prestations"] .card h3{
     pointer-events: none;
     z-index: -1;
   
-    /* ✅ beaucoup plus clair que le précédent */
     background: linear-gradient(
       180deg,
       rgba(255,255,255,0.03),
       rgba(0,0,0,0.03)
     );
   }
-
-/* =========================
-   Images : anti “flash bleu” iOS / mobile
-   ========================= */
-
-/* on garde un fond cohérent pendant le chargement */
-.thumb{
-  background:
-    var(--grain),
-    linear-gradient(180deg, rgba(11,35,38,0.90), rgba(15,47,51,0.90));
-}
-
-/* =========================
-   Images – anti flash (mobile/ios) DEFINITIF
-   ========================= */
-
-/* Cache par défaut les images des vignettes (évite le flash AVANT JS) */
-.thumb img{
-  opacity: 0;
-  transition: opacity .18s ease;
-  display: block;
-  -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-/* On n'affiche que quand elles sont vraiment chargées */
-.thumb img.is-loaded{
-  opacity: 1;
-}
-
-/* =========================
-   PRESENTATION – boutons centrés sur mobile
-   ========================= */
-@media (max-width: 767px){
-  body.page-presentation .hero-actions .btn{
-    justify-content: center;   /* centre le texte horizontalement */
-    text-align: center;
+  
+  /* =========================
+     PRESENTATION – boutons centrés sur mobile
+     ========================= */
+  @media (max-width: 767px){
+    body.page-presentation .hero-actions .btn{
+      justify-content: center;
+      text-align: center;
+    }
   }
-}
-
-/* Anti-flash sur images bleu foncé (mobile) */
-.pb-img,
-.domain-icon,
-.hero-links img,
-.thumb {
-  background: linear-gradient(180deg, rgba(11,35,38,0.90), rgba(15,47,51,0.90));
-}
-
-/* Image invisible tant qu'elle n'est pas chargée */
-.pb-img img,
-.domain-icon img,
-.hero-links img,
-.thumb img {
-  opacity: 0;
-  transition: opacity .18s ease;
-  display: block;
-}
-
-/* Quand chargée => visible */
-img.is-loaded {
-  opacity: 1 !important;
-}
-
-/* =================================================
-   Merci.html / Cookies modal : X parfaitement centré
-   ================================================= */
-
-   .cookie-modal__head{
-    position: relative; /* utile si un jour tu veux passer en absolute */
+  
+  /* =================================================
+     Merci.html / Cookies modal : X parfaitement centré
+     ================================================= */
+  .cookie-modal__head{
+    position: relative;
     text-decoration: none;
   }
   
   /* Le bouton X */
   .cookie-x{
-    display: grid;        /* ✅ centre le × */
-    place-items: center;  /* ✅ centre parfait */
-    line-height: 1;       /* ✅ évite le décalage vertical */
-    padding: 0;           /* ✅ le centrage dépend uniquement width/height */
-    text-decoration: none !important; /* enlève le soulignement */   
+    display: grid;
+    place-items: center;
+    line-height: 1;
+    padding: 0;
+    text-decoration: none !important;
   }
   
   /* Optionnel : si tu veux un tout petit ajustement visuel */
@@ -1772,57 +1723,87 @@ img.is-loaded {
   }
   
   /* =================================================
-   Page MERCI : masquer le header en arrière-plan
-   ================================================= */
-
-body[data-tagline^="Merci"] #site-header{
-  display: none !important;
-}
-body[data-tagline^="Merci"]{
-  overflow: hidden;
-}
-
-/* =================================================
-   MERCI – boutons centrés sur mobile
-   ================================================= */
-
-   @media (max-width: 600px){
+     Page MERCI : masquer le header en arrière-plan
+     ================================================= */
+  body[data-tagline^="Merci"] #site-header{
+    display: none !important;
+  }
+  body[data-tagline^="Merci"]{
+    overflow: hidden;
+  }
+  
+  /* =================================================
+     MERCI – boutons centrés sur mobile
+     ================================================= */
+  @media (max-width: 600px){
     body[data-tagline^="Merci"] .cookie-modal__actions{
-      justify-content: center;     /* centre horizontalement */
+      justify-content: center;
       align-items: center;
       gap: 12px;
-      flex-wrap: wrap;             /* autorise le retour à la ligne */
+      flex-wrap: wrap;
     }
   
     body[data-tagline^="Merci"] .cookie-modal__actions .btn{
       margin: 0;
     }
   }
- 
-  /* Anti flash bleu clair sous les images */
-img {
-  background-color: #0b2326; /* EXACTEMENT ton bleu foncé */
-}
-.thumb,
-.hero-art,
-.pb-img,
-.domain-icon {
-  background-color: #0b2326;
-}
-img {
-  display: block;
-}
-
-/* Formulaire – champs obligatoires */
-.required {
-  color: #0f2f2f; /* ou une couleur légèrement plus foncée si tu veux */
-  font-weight: 700;
-  margin-left: 2px;
-}
-
-.form-note {
-  font-size: 0.85rem;
-  color: rgba(15, 47,51, 0.75);
-  margin-top: 6px;
-  margin-bottom: 30px;
-}
+  
+  /* Formulaire – champs obligatoires */
+  .required {
+    color: #0f2f2f;
+    font-weight: 700;
+    margin-left: 2px;
+  }
+  
+  .form-note {
+    font-size: 0.85rem;
+    color: rgba(15, 47,51, 0.75);
+    margin-top: 6px;
+    margin-bottom: 30px;
+  }
+  
+  /* =================================================
+     ✅ BLOC UNIQUE FINAL – IMAGES (anti “flash bleu clair” iOS / mobile)
+     IMPORTANT : placé en DERNIER pour écraser les règles précédentes
+     ================================================= */
+  
+  /* Tous les wrappers “image” gardent un fond cohérent */
+  .thumb,
+  .hero-art,
+  .pb-img,
+  .domain-icon,
+  .home-center,
+  .hero-links img{
+    background: var(--img-placeholder);
+    background-color: var(--img-placeholder-solid);
+  }
+  
+  /* Base saine + placeholder sur toutes les images */
+  img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+  
+    background: var(--img-placeholder);
+    background-color: var(--img-placeholder-solid);
+  
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  
+  /* Fade-in : image invisible tant qu’elle n’est pas marquée chargée */
+  img{
+    opacity: 0;
+    transition: opacity .18s ease;
+  }
+  
+  img.is-loaded{
+    opacity: 1;
+  }
+  
+  /* En cas d’erreur de chargement : éviter un “trou” */
+  img.is-error{
+    opacity: 1;
+    filter: grayscale(1) contrast(0.9);
+  }
+  
