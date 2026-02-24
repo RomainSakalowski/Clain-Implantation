@@ -208,7 +208,7 @@
     display: block;
     object-fit: cover;
     object-position: center 90%;
-    transform: translateY(-18px) scale(1.45); /* ✅ remonte */
+    transform: translateY(-22px) scale(1.45); /* ✅ remonte */
     transform-origin: center;
   }
   
