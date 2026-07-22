@@ -7,113 +7,27 @@
   <meta name="description" content="Carte de visite numérique de Romain Sakalowski — Clain Implantation.">
   <title>Romain Sakalowski | Clain Implantation</title>
   <style>
-    :root {
-      --bg-1:#071d29;
-      --bg-2:#0d4058;
-      --panel:rgba(255,255,255,.09);
-      --line:rgba(255,255,255,.18);
-      --text:#f4f9fb;
-      --muted:#c9dbe4;
-      --shadow:0 28px 70px rgba(0,0,0,.34);
-    }
+    :root{--bg1:#071d29;--bg2:#0d4058;--text:#f4f9fb;--muted:#c9dbe4;--line:rgba(255,255,255,.18);--panel:rgba(255,255,255,.09)}
     *{box-sizing:border-box}
-    html{min-height:100%;background:var(--bg-1)}
-    body{
-      margin:0;
-      min-height:100vh;
-      min-height:100svh;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 16% 12%,rgba(107,173,202,.22),transparent 30rem),
-        radial-gradient(circle at 90% 88%,rgba(41,122,157,.25),transparent 34rem),
-        linear-gradient(145deg,var(--bg-1),var(--bg-2));
-      display:grid;
-      place-items:center;
-      padding:24px 16px max(28px,env(safe-area-inset-bottom));
-    }
+    html{min-height:100%;background:var(--bg1)}
+    body{margin:0;min-height:100vh;min-height:100svh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 16% 12%,rgba(107,173,202,.22),transparent 30rem),radial-gradient(circle at 90% 88%,rgba(41,122,157,.25),transparent 34rem),linear-gradient(145deg,var(--bg1),var(--bg2));display:grid;place-items:center;padding:24px 16px max(28px,env(safe-area-inset-bottom))}
     .page{width:min(100%,520px);text-align:center}
     .brand{margin:0 0 16px;font-size:.83rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700}
     h1{margin:0;font-size:clamp(1.65rem,6vw,2.35rem);line-height:1.08;letter-spacing:.02em}
     .role{margin:8px 0 22px;color:var(--muted);font-size:1rem}
-    .scene{perspective:1800px;width:min(100%,390px);margin-inline:auto}
-    .card{
-      width:100%;
-      aspect-ratio:1365/2048;
-      position:relative;
-      transform-style:preserve-3d;
-      transition:transform .75s cubic-bezier(.2,.8,.2,1);
-      cursor:pointer;
-      filter:drop-shadow(0 25px 33px rgba(0,0,0,.38));
-      -webkit-tap-highlight-color:transparent;
-    }
-    .card.flipped{transform:rotateY(180deg)}
-    .face{
-      position:absolute;
-      inset:0;
-      overflow:hidden;
-      border-radius:20px;
-      backface-visibility:hidden;
-      -webkit-backface-visibility:hidden;
-      background:#eef3f5;
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.32);
-    }
-    .face.back{transform:rotateY(180deg);background:#0d4058}
-    .face img{display:block;width:100%;height:100%;object-fit:cover}
+    .card-button{display:block;width:min(100%,390px);margin-inline:auto;padding:0;border:0;border-radius:20px;background:transparent;cursor:pointer;filter:drop-shadow(0 25px 33px rgba(0,0,0,.38));-webkit-tap-highlight-color:transparent}
+    .card-button img{display:block;width:100%;aspect-ratio:1365/2048;object-fit:cover;border-radius:20px;background:#eef3f5;transition:opacity .18s ease,transform .18s ease}
+    .card-button.changing img{opacity:.18;transform:scale(.985)}
     .hint{margin:14px 0 0;color:var(--muted);font-size:.86rem}
-    .actions{
-      margin-top:22px;
-      padding:14px;
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:10px;
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:var(--panel);
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-    }
-    .btn{
-      min-height:51px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:14px;
-      color:var(--text);
-      text-decoration:none;
-      background:rgba(255,255,255,.08);
-      font-weight:700;
-      font-size:.93rem;
-      transition:transform .15s ease,background .15s ease;
-      padding:10px;
-      cursor:pointer;
-    }
-    .btn:hover{background:rgba(255,255,255,.16);transform:translateY(-1px)}
-    .btn:active{transform:translateY(0)}
-    .btn.primary{background:#f5fafc;color:#0b3448;border-color:#f5fafc}
+    .actions{margin-top:22px;padding:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;border:1px solid var(--line);border-radius:20px;background:var(--panel);box-shadow:0 28px 70px rgba(0,0,0,.34);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    .btn{min-height:51px;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,.16);border-radius:14px;color:var(--text);text-decoration:none;background:rgba(255,255,255,.08);font-weight:700;font-size:.93rem;transition:transform .15s ease,background .15s ease;padding:10px;cursor:pointer}
+    .btn:hover{background:rgba(255,255,255,.16);transform:translateY(-1px)} .btn.primary{background:#f5fafc;color:#0b3448;border-color:#f5fafc}
     .btn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
     .footer{margin-top:16px;font-size:.76rem;color:rgba(225,239,246,.65)}
-    .toast{
-      position:fixed;
-      left:50%;
-      bottom:max(22px,env(safe-area-inset-bottom));
-      transform:translate(-50%,16px);
-      padding:10px 14px;
-      border-radius:999px;
-      background:#f4f9fb;
-      color:#0b3448;
-      font-weight:700;
-      opacity:0;
-      pointer-events:none;
-      transition:.2s ease;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-    }
+    .toast{position:fixed;left:50%;bottom:max(22px,env(safe-area-inset-bottom));transform:translate(-50%,16px);padding:10px 14px;border-radius:999px;background:#f4f9fb;color:#0b3448;font-weight:700;opacity:0;pointer-events:none;transition:.2s ease;box-shadow:0 10px 30px rgba(0,0,0,.25)}
     .toast.show{opacity:1;transform:translate(-50%,0)}
-    @media (max-width:360px){.actions{grid-template-columns:1fr}.scene{width:min(100%,330px)}}
-    @media (prefers-reduced-motion:reduce){.card,.btn,.toast{transition:none}}
+    @media(max-width:360px){.actions{grid-template-columns:1fr}.card-button{width:min(100%,330px)}}
+    @media(prefers-reduced-motion:reduce){.card-button img,.btn,.toast{transition:none}}
   </style>
 </head>
 <body>
@@ -122,73 +36,43 @@
     <h1>Romain Sakalowski</h1>
     <p class="role">Ingénieur &amp; BE Industriel</p>
 
-    <div class="scene">
-      <div class="card" id="card" role="button" tabindex="0" aria-label="Retourner la carte de visite" aria-pressed="false">
-        <div class="face front"><img src="recto-clain-2026.webp?v=2" alt="Recto de la carte Clain Implantation"></div>
-        <div class="face back"><img src="verso-clain-v2-2026.webp?v=2" alt="Verso de la carte de Romain Sakalowski"></div>
-      </div>
-    </div>
-    <p class="hint">Touchez la carte pour voir l’autre face</p>
+    <button class="card-button" id="cardButton" type="button" aria-label="Afficher le verso de la carte" aria-pressed="false">
+      <img id="cardImage" src="recto-original-20260722.jpg" alt="Recto de la carte Clain Implantation">
+    </button>
+    <p class="hint" id="hint">Touchez la carte pour voir le verso</p>
 
     <section class="actions" aria-label="Coordonnées">
-      <a class="btn primary" href="tel:+33785386450">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.78a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.11-.45c.88.33 1.82.56 2.78.69A2 2 0 0 1 22 16.92z"/></svg>
-        Appeler
-      </a>
-      <a class="btn" href="mailto:clain.implantation@gmail.com">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
-        E-mail
-      </a>
-      <a class="btn" href="https://clain-implantation.fr/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
-        Site internet
-      </a>
-      <a class="btn" href="romain-sakalowski.vcf" download>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-        Ajouter aux contacts
-      </a>
-      <button class="btn" id="share" type="button" style="grid-column:1/-1">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51 8.59 10.49"/></svg>
-        Partager la carte
-      </button>
+      <a class="btn primary" href="tel:+33785386450"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.78a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.11-.45c.88.33 1.82.56 2.78.69A2 2 0 0 1 22 16.92z"/></svg>Appeler</a>
+      <a class="btn" href="mailto:clain.implantation@gmail.com"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>E-mail</a>
+      <a class="btn" href="https://clain-implantation.fr/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>Site internet</a>
+      <a class="btn" href="romain-sakalowski.vcf" download><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>Ajouter aux contacts</a>
+      <button class="btn" id="share" type="button" style="grid-column:1/-1"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51 8.59 10.49"/></svg>Partager la carte</button>
     </section>
-    <p class="footer">Études d’implantation · Assistance à maîtrise d’ouvrage · Dossiers techniques · Scan &amp; modélisation 3D</p>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite">Lien copié</div>
-
   <script>
-    const card = document.getElementById('card');
-    const flip = () => {
-      const state = card.classList.toggle('flipped');
-      card.setAttribute('aria-pressed', String(state));
-    };
-    card.addEventListener('click', flip);
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+    const button=document.getElementById('cardButton');
+    const image=document.getElementById('cardImage');
+    const hint=document.getElementById('hint');
+    let verso=false;
+    const recto='recto-original-20260722.jpg';
+    const back='verso-original-20260722.png';
+    new Image().src=back;
+    button.addEventListener('click',()=>{
+      button.classList.add('changing');
+      setTimeout(()=>{
+        verso=!verso;
+        image.src=verso?back:recto;
+        image.alt=verso?'Verso de la carte de Romain Sakalowski':'Recto de la carte Clain Implantation';
+        button.setAttribute('aria-pressed',String(verso));
+        button.setAttribute('aria-label',verso?'Afficher le recto de la carte':'Afficher le verso de la carte');
+        hint.textContent=verso?'Touchez la carte pour revenir au recto':'Touchez la carte pour voir le verso';
+        button.classList.remove('changing');
+      },170);
     });
-
-    const toast = document.getElementById('toast');
-    const showToast = text => {
-      toast.textContent = text;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 1800);
-    };
-    document.getElementById('share').addEventListener('click', async () => {
-      const data = {
-        title: 'Romain Sakalowski — Clain Implantation',
-        text: 'Carte de visite de Romain Sakalowski — Clain Implantation',
-        url: window.location.href
-      };
-      try {
-        if (navigator.share) await navigator.share(data);
-        else {
-          await navigator.clipboard.writeText(window.location.href);
-          showToast('Lien copié');
-        }
-      } catch (e) {
-        if (e.name !== 'AbortError') showToast('Partage indisponible');
-      }
-    });
+    const toast=document.getElementById('toast');
+    const showToast=t=>{toast.textContent=t;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)};
+    document.getElementById('share').addEventListener('click',async()=>{const data={title:'Romain Sakalowski — Clain Implantation',text:'Carte de visite de Romain Sakalowski — Clain Implantation',url:window.location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(window.location.href);showToast('Lien copié')}}catch(e){if(e.name!=='AbortError')showToast('Partage indisponible')}});
   </script>
 </body>
 </html>
