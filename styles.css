@@ -4022,3 +4022,121 @@
 .page-home .ci-final-cta .ci-section-label{
   margin-bottom:36px !important;
 }
+
+/* =================================================
+   MOBILE — RETIRER LES IMAGES DE FOND
+   ================================================= */
+
+   @media (max-width: 768px){
+
+    .bg-usine-technique,
+    .bg-plan-industriel,
+    .bg-bureau-ingenieur,
+    .bg-table-architecte,
+    .ci-bg-dark,
+    .ci-method,
+    .ci-expertise,
+    .ci-about-network,
+    .ci-final-cta{
+      background-image:none !important;
+    }
+  
+    .bg-usine-technique::before,
+    .bg-plan-industriel::before,
+    .bg-bureau-ingenieur::before,
+    .bg-table-architecte::before,
+    .ci-bg-dark::before,
+    .ci-method::before,
+    .ci-expertise::before,
+    .ci-about-network::before,
+    .ci-final-cta::before{
+      background-image:none !important;
+      opacity:0 !important;
+    }
+  }
+
+  @media (max-width: 768px){
+    [class*="bg-"]{
+      background-image:none !important;
+    }
+  
+    [class*="bg-"]::before,
+    [class*="bg-"]::after{
+      background-image:none !important;
+    }
+  }
+
+  @media (max-width: 980px){
+
+    .premium-header-inner{
+      display:grid !important;
+      grid-template-columns:auto 1fr auto !important;
+      align-items:center !important;
+    }
+  
+    .premium-brand{
+      grid-column:1 !important;
+      justify-self:start !important;
+    }
+  
+    .premium-tagline{
+      display:none !important;
+    }
+  
+    .premium-menu-toggle{
+      grid-column:3 !important;
+      justify-self:end !important;
+      margin-left:auto !important;
+    }
+  }
+
+  @media (max-width: 980px){
+    .premium-menu-btn{
+      margin-left:auto !important;
+      justify-self:end !important;
+    }
+  }
+
+  /* =================================================
+   MOBILE — AFFICHAGE SÉCURISÉ DES DEUX PONTS
+   ================================================= */
+
+@media (max-width:768px){
+
+  .page-presentation .ci-about-project-comparison{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+    gap:18px !important;
+    overflow:visible !important;
+  }
+
+  .page-presentation .ci-about-project-comparison figure{
+    display:block !important;
+    width:100% !important;
+    min-height:0 !important;
+    margin:0 !important;
+    overflow:hidden !important;
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+
+  .page-presentation .ci-about-project-comparison img{
+    display:block !important;
+    width:100% !important;
+    max-width:none !important;
+    height:auto !important;
+    aspect-ratio:16 / 10 !important;
+    object-fit:cover !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+  }
+
+  .page-presentation .ci-about-project-difference{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    height:34px !important;
+  }
+}
