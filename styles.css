@@ -4140,3 +4140,13 @@
     height:34px !important;
   }
 }
+
+/* Masquer uniquement l’image d’assemblage sur téléphone */
+@media (max-width:768px){
+
+  .page-services-v2 .ci-services-domains-visual,
+  .page-prestations .ci-services-domains-visual{
+    display:none !important;
+  }
+
+}
