@@ -2,163 +2,398 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fix 1 : évite le flash blanc immédiatement -->
   <style>
-    html, body { margin: 0; background: #0f2f2f; }
-    body { opacity: 0; transition: opacity .15s ease; }
-    body.ready { opacity: 1; }
+    html,
+    body{
+      margin:0;
+      background:#071A1C;
+    }
+
+    body{
+      opacity:0;
+      transition:opacity .15s ease;
+    }
+
+    body.ready{
+      opacity:1;
+    }
   </style>
+
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('ready');
     });
   </script>
 
-  <meta name="google-site-verification" content="eOeNg2gF1VX8tvCV1LGB2ue8-tof6oeWbBYEpTdtnPc" />
+  <meta name="google-site-verification" content="eOeNg2gF1VX8tvCV1LGB2ue8-tof6oeWbBYEpTdtnPc">
 
-  <title>Clain Implantation – Bureau d'études implantation industrielle – Conseil & modélisation 3D | Reims – France</title>
-  
-  <meta name="description" content="Implantation industrielle, conseil technique, modélisation 2D/3D, études de faisabilité et optimisation d'espaces : un accompagnement structuré et réactif pour industriels, PME, artisans et particuliers en France et en Europe.">
+  <title>Clain Implantation – Bureau d'études indépendant en implantation industrielle | Reims</title>
+  <meta name="description" content="Bureau d'études indépendant spécialisé en implantation industrielle, optimisation d'espaces, faisabilité technique et modélisation 2D/3D. Un interlocuteur unique pour structurer vos projets avec méthode.">
 
-  <link rel="icon" type="image/svg+xml" href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20SCU%20V5.png">
+  <link rel="icon" type="image/png" href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20SCU%20V5.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
-<body class="page-home" data-tagline="">
-    <!-- HEADER injecté (identique aux autres pages) -->
-    <div id="site-header"></div>
-    
-  <main class="container">
+<body class="page-home page-home-v2" data-tagline="">
+  <div id="site-header"></div>
 
-    <!-- HOME HERO : visuel en haut + texte en dessous -->
-    <section class="hero" aria-label="Introduction">
-      <div class="hero-inner home-hero">
+  <main>
 
-        <!-- ✅ HAUT : 4 badges + image centrale -->
-        <div class="home-visual">
+  <section class="ci-usecases ci-usecases-impact">
+  <div class="container">
 
-          <!-- haut gauche -->
-          <article class="card half home-badge" data-pos="tl">
-            <a href="presentation.html" style="text-decoration:none;color:inherit">
-              <div class="thumb" aria-hidden="true">
-                <img src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Pr%C3%A9sentation%20de%20la%20soci%C3%A9t%C3%A9.png" alt="" loading="lazy">
-              </div>
-              <h3>À propos de la société</h3>
-              <p>Parcours, missions, vision.</p>
-            </a>
+    <div class="ci-usecases-intro">
+
+      <div class="ci-block-head">
+        <p class="ci-section-label">Quand faire appel à Clain ?</p>
+
+        <h2>
+          Avant d’investir,<br>
+          il faut savoir où l’on va.
+        </h2>
+      </div>
+
+      <div class="ci-usecases-intro-text">
+        <p class="ci-usecases-lead">
+          Une implantation engage vos espaces, vos flux, vos équipes
+          et parfois une part importante de votre investissement.
+        </p>
+
+        <p>
+          Clain Implantation vous aide à transformer une contrainte ou une idée
+          en scénarios clairs, comparables et exploitables avant de passer à l’action.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="ci-usecase-grid">
+
+      <article class="ci-usecase-card">
+        <div class="ci-usecase-top">
+          <span class="ci-usecase-index">01</span>
+          <p class="ci-usecase-tag">Investissement</p>
+        </div>
+
+        <h3>Intégrer un nouvel équipement</h3>
+
+        <p>
+          Vérifier l’espace disponible, les accès, les flux, la maintenance
+          et les contraintes d’exploitation avant d’engager l’achat
+          ou le déplacement d’une machine.
+        </p>
+
+        <strong class="ci-usecase-result">
+          Sécuriser l’investissement
+        </strong>
+      </article>
+
+      <article class="ci-usecase-card">
+        <div class="ci-usecase-top">
+          <span class="ci-usecase-index">02</span>
+          <p class="ci-usecase-tag">Organisation</p>
+        </div>
+
+        <h3>Réorganiser un atelier ou un local</h3>
+
+        <p>
+          Repenser les zones de travail, les circulations et les interactions
+          entre les équipements afin de rendre l’espace plus lisible,
+          plus fluide et plus efficace.
+        </p>
+
+        <strong class="ci-usecase-result">
+          Améliorer les flux
+        </strong>
+      </article>
+
+      <article class="ci-usecase-card">
+        <div class="ci-usecase-top">
+          <span class="ci-usecase-index">03</span>
+          <p class="ci-usecase-tag">Arbitrage</p>
+        </div>
+
+        <h3>Comparer plusieurs scénarios</h3>
+
+        <p>
+          Visualiser différentes solutions d’implantation et confronter
+          leurs avantages, leurs contraintes et leurs incidences
+          avant de retenir une orientation.
+        </p>
+
+        <strong class="ci-usecase-result">
+          Décider sur une base claire
+        </strong>
+      </article>
+
+      <article class="ci-usecase-card">
+        <div class="ci-usecase-top">
+          <span class="ci-usecase-index">04</span>
+          <p class="ci-usecase-tag">Communication</p>
+        </div>
+
+        <h3>Présenter un projet clairement</h3>
+
+        <p>
+          Produire des plans, vues et supports compréhensibles pour échanger,
+          consulter, convaincre ou faire valider une décision technique.
+        </p>
+
+        <strong class="ci-usecase-result">
+          Rendre le projet lisible
+        </strong>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+    <section class="ci-method ci-method-refined has-section-visual visual-dark">
+      <div class="ci-section-visual bg-usine-technique" aria-hidden="true"></div>
+
+      <div class="container">
+
+        <div class="ci-block-head">
+          <p class="ci-section-label">Méthode</p>
+
+          <h2>
+            Une démarche claire,<br>
+            du besoin au support de décision.
+          </h2>
+
+          <p>
+            Chaque mission suit une logique structurée : comprendre l’existant,
+            organiser les options, puis produire un support exploitable pour décider.
+          </p>
+        </div>
+
+        <div class="ci-method-steps">
+
+          <article class="ci-method-step">
+            <div class="ci-method-number">01</div>
+
+            <div class="ci-method-content">
+              <p class="ci-method-axis">AXE X · EXISTANT</p>
+              <h3>Cadrer le besoin</h3>
+              <p>
+                Comprendre le contexte, les surfaces, les équipements,
+                les contraintes, les flux et les points bloquants.
+              </p>
+            </div>
+
+            <div class="ci-method-output">
+              <span>Sortie</span>
+              <strong>Base projet clarifiée</strong>
+            </div>
           </article>
 
-          <!-- centre -->
-          <div class="home-center">
-            <img
-              class="home-center-img"
-              src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Recto%20carte.jpg"
-              alt="Clain Implantation"
-              loading="eager"
-            />
-          </div>
+          <article class="ci-method-step">
+            <div class="ci-method-number">02</div>
 
-          <!-- haut droit -->
-          <article class="card half home-badge" data-pos="tr">
-            <a href="prestations.html" style="text-decoration:none;color:inherit">
-              <div class="thumb" aria-hidden="true">
-                <img src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Ordonnancement%20des%20prestations.png" alt="" loading="lazy">
-              </div>
-              <h3>Ordonnancement des prestations</h3>
-              <p>Méthode, étapes, livrables.</p>
-            </a>
+            <div class="ci-method-content">
+              <p class="ci-method-axis">AXE Y · ORGANISATION</p>
+              <h3>Structurer les scénarios</h3>
+              <p>
+                Traduire les contraintes en options concrètes : implantation,
+                circulation, optimisation d’espace et arbitrages possibles.
+              </p>
+            </div>
+
+            <div class="ci-method-output">
+              <span>Sortie</span>
+              <strong>Scénarios comparables</strong>
+            </div>
           </article>
 
-          <!-- bas gauche -->
-          <article class="card third home-badge" data-pos="bl">
-            <a href="portfolio.html" style="text-decoration:none;color:inherit">
-              <div class="thumb" aria-hidden="true">
-                <img src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Portfolio%20des%20projets.png" alt="" loading="lazy">
-              </div>
-              <h3>Portfolio des projets</h3>
-              <p>Exemples de réalisations.</p>
-            </a>
-          </article>
+          <article class="ci-method-step">
+            <div class="ci-method-number">03</div>
 
-          <!-- bas droit -->
-          <article class="card half home-badge" data-pos="br">
-            <a href="renseignement.html" style="text-decoration:none;color:inherit">
-              <div class="thumb" aria-hidden="true">
-                <img src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Contacts.png" alt="" loading="lazy">
-              </div>
-              <h3>Contacts</h3>
-              <p>Coordonnées & demande de renseignements.</p>
-            </a>
+            <div class="ci-method-content">
+              <p class="ci-method-axis">AXE Z · PROJECTION</p>
+              <h3>Visualiser la décision</h3>
+              <p>
+                Produire des plans, vues 2D/3D, annotations et supports lisibles
+                pour valider ou présenter le projet.
+              </p>
+            </div>
+
+            <div class="ci-method-output">
+              <span>Sortie</span>
+              <strong>Support de décision</strong>
+            </div>
           </article>
 
         </div>
 
-        <!-- ✅ BAS : grand encart texte -->
-        <div class="home-text-badge">
-          <div class="hero-text">
-            <h2>Études d'implantation & conseil technique</h2>
+      </div>
+    </section>
 
-            <p class="intro">
-              <strong>Des projets industriels aux réalisations sur-mesure : votre partenaire technique de proximité</strong>
-            </p>
 
-            <p>
-              Clain Implantation est un bureau d'études à taille humaine qui accompagne
-              industriels, PME, artisans et particuliers dans la concrétisation de leurs
-              projets. De l'implantation d'équipements de plusieurs millions
-              d'euros à l'aménagement d'ateliers et l'agencement d'espaces, nous mettons la même expertise
-              et la même exigence au service de chaque projet.
-            </p>
+    <section class="ci-deliverables">
+      <div class="container ci-deliverables-grid">
 
-            <p class="highlight">
-              <strong>Une approche fondée sur la complémentarité</strong>
-            </p>
+        <div class="ci-deliverables-copy">
+          <p class="ci-section-label dark">Livrables</p>
 
-            <p>
-              Ma force réside dans la complémentarité des profils sur lesquels je m'appuie. Seul pilote de vos projets, lorsque la mission le nécessite, je suis en capacité de m'entourer de profils complémentaires, chacun expert dans son domaine. Nous sommes ainsi capables d'appréhender vos enjeux sous tous les angles pour vous proposer des solutions optimisées et réalistes. Cette richesse d'expertises me permet d'être réactif, précis et pertinent, quelle que soit la complexité de votre demande.
-            </p>
+          <h2>
+            Ce que vous recevez concrètement.
+          </h2>
 
-            <p class="highlight">
-              <strong>Un accompagnement sur-mesure, de la conception à la réalisation</strong>
-            </p>
-
-            <p>
-              Nous prenons le temps de comprendre vos contraintes, vos objectifs et votre
-              environnement pour définir ensemble la meilleure solution technique. De la
-              modélisation 2D/3D aux analyses de faisabilité, en passant par la préparation de documents de cadrage
-              et la consultation de fournisseurs, nous vous
-              accompagnons à chaque étape avec méthode et transparence.
-            </p>
-
-            <p class="highlight">
-              <strong>Une vision tournée vers l'avenir</strong>
-            </p>
-
-            <p>
-              Nos engagements dépassent le cadre du projet immédiat. Nous cultivons une
-              ambition commune : développer les savoir-faire locaux et concevoir des
-              solutions pérennes qui répondent aux besoins des générations futures. Pour
-              y parvenir, nous faisons évoluer continuellement nos compétences et nos
-              outils, garantissant ainsi des réalisations viables et adaptées à leur
-              environnement.
-            </p>
-
-            <p>
-              Implanté à Reims, notre bureau d’études intervient auprès des industriels, PME et artisans sur l’ensemble du territoire français ainsi qu’en Europe.
-            </p>
-
-            <p class="footer-text">
-              <strong>Votre projet mérite une expertise engagée. Parlons-en.</strong>
-            </p>
-          </div>
+          <p>
+            L’objectif n’est pas seulement de produire un beau visuel.
+            L’objectif est de fournir un support clair, exploitable et utile
+            pour décider, présenter ou avancer dans le projet.
+          </p>
         </div>
 
+        <div class="ci-deliverables-list">
+
+          <article>
+            <span>01</span>
+            <h3>Plan d’implantation</h3>
+            <p>
+              Organisation des zones, équipements, circulations et contraintes principales.
+            </p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Scénarios comparatifs</h3>
+            <p>
+              Plusieurs options présentées clairement pour faciliter les arbitrages.
+            </p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Vue 2D / 3D</h3>
+            <p>
+              Supports visuels pour mieux comprendre les volumes, distances et interactions.
+            </p>
+          </article>
+
+          <article>
+            <span>04</span>
+            <h3>Support de décision</h3>
+            <p>
+              Un document exploitable pour échanger, valider ou présenter le projet.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="ci-expertise has-section-visual visual-dark">
+      <div class="ci-section-visual bg-plan-industriel" aria-hidden="true"></div>
+
+      <div class="container ci-expertise-grid">
+
+        <div class="ci-block-head">
+          <p class="ci-section-label">Expertises</p>
+
+          <h2>
+            Des missions techniques adaptées à la taille du projet.
+          </h2>
+
+          <p>
+            Clain Implantation intervient sur des problématiques d’espace,
+            d’organisation, de visualisation et de préparation de projet.
+          </p>
+        </div>
+
+        <div class="ci-expertise-list">
+
+          <a href="prestations.html">
+            <span>01</span>
+            <strong>Implantation industrielle</strong>
+          </a>
+
+          <a href="prestations.html">
+            <span>02</span>
+            <strong>Optimisation d’espaces</strong>
+          </a>
+
+          <a href="prestations.html">
+            <span>03</span>
+            <strong>Modélisation 2D / 3D</strong>
+          </a>
+
+          <a href="prestations.html">
+            <span>04</span>
+            <strong>Études de faisabilité</strong>
+          </a>
+
+          <a href="prestations.html">
+            <span>05</span>
+            <strong>Supports de présentation</strong>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="ci-independent">
+      <div class="container ci-independent-grid">
+
+        <div>
+          <p class="ci-section-label">Positionnement</p>
+
+          <h2>
+            Un interlocuteur unique.
+            Une vision continue.
+          </h2>
+        </div>
+
+        <div class="ci-independent-panel">
+          <p>
+            La structure reste volontairement indépendante et agile.
+            Chaque projet est suivi avec une logique simple :
+            comprendre précisément le besoin, structurer les options possibles,
+            puis produire des supports clairs pour décider.
+          </p>
+
+          <p>
+            Lorsque le projet l’exige, des compétences complémentaires peuvent être
+            mobilisées sans multiplier les interlocuteurs ni diluer la responsabilité du suivi.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="ci-final-cta">
+      <div class="container">
+        <div class="ci-final-card">
+          <p class="ci-section-label">Échanger</p>
+
+          <h2>
+            Un projet à clarifier avant d’investir ?
+          </h2>
+
+          <p>
+            Décrivez votre besoin, vos contraintes ou votre idée.
+            Clain Implantation vous aide à structurer les premières options.
+          </p>
+
+          <a href="renseignement.html" class="v2-btn v2-btn-primary">
+            Échanger sur mon projet
+          </a>
+        </div>
       </div>
     </section>
 
@@ -167,6 +402,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <small>© <span id="year"></span> Clain Implantation — Bureau d’études</small>
+
       <div class="footer-links">
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="#" id="manage-cookies">Gérer les cookies</a>
@@ -175,10 +411,8 @@
     </div>
   </footer>
 
-  <link rel="stylesheet" href="./styles.css">
   <script src="main.js" defer></script>
-  <script src="load-header.js" defer></script>  
+  <script src="load-header.js" defer></script>
   <script src="./consent-manager.js" defer></script>
-  
 </body>
 </html>

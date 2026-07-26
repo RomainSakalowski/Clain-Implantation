@@ -4,100 +4,232 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Fix 1 : évite le flash blanc immédiatement -->
   <style>
-    html, body { margin: 0; background: #0f2f2f; }
-    body { opacity: 0; transition: opacity .15s ease; }
-    body.ready { opacity: 1; }
+    html,
+    body{
+      margin:0;
+      background:#071a1c;
+    }
+
+    body{
+      opacity:0;
+      transition:opacity .15s ease;
+    }
+
+    body.ready{
+      opacity:1;
+    }
   </style>
+
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.add('ready');
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("ready");
     });
   </script>
 
-  <title>Clain Implantation — Renseignements</title>
+  <title>Clain Implantation — Contact et demande de renseignements</title>
 
-  <link rel="icon" type="image/svg+xml" href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20SCU%20V5.png" />
+  <meta
+    name="description"
+    content="Présentez votre projet à Clain Implantation : implantation industrielle, optimisation d’espaces, études de faisabilité et modélisation 2D/3D."
+  />
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20SCU%20V5.png"
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Manrope:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
-<body data-tagline="Renseignements • Infos utiles">
+<body
+  data-tagline="Contact • Échanger sur votre projet"
+  class="page-contact page-contact-v2"
+>
 
-  <!-- HEADER injecté -->
   <div id="site-header"></div>
 
-  <main class="container">
+  <main class="ci-contact-page">
 
-    <section class="hero">
-      <div class="hero-inner">
+    <!-- HERO -->
+    <section class="ci-contact-hero">
+    <div class="container ci-contact-hero-grid">
 
-        <!-- TEXTE -->
-        <div class="hero-text">
-          <h2>Décrivez-nous votre besoin</h2>
+    <div class="ci-contact-hero-copy">
+  
+      <p class="ci-section-label">Contact</p>
+  
+      <h1>
+        Parlons de votre projet.
+      </h1>
+  
+      <p class="ci-contact-lead">
+        Un premier échange permet de comprendre votre besoin,
+        d’identifier les informations disponibles et de déterminer
+        la manière la plus pertinente d’aborder votre projet.
+      </p>
+  
+      <p class="ci-contact-sublead">
+        Vous pouvez transmettre une idée encore peu définie, une problématique
+        d’implantation, des plans existants ou un besoin technique déjà structuré.
+        Chaque demande est étudiée dans son contexte, avec la même attention,
+        quelle que soit sa taille ou son niveau d’avancement.
+      </p>
+  
+      <a
+        href="#formulaire-contact"
+        class="v2-btn v2-btn-primary ci-contact-scroll-btn"
+      >
+        Décrire mon besoin
+      </a>
+  
+    </div>
+  
+    <div class="ci-contact-hero-card">
+      <img
+        src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Verso_carte_finalv13.png"
+        alt="Carte de visite de Romain Sakalowski — Clain Implantation"
+        loading="eager"
+      />
+    </div>
+  
+  </div>
+    </section>
 
-          <p class="intro">Nous sommes à votre écoute</p>
+
+    <!-- MODES D’ÉCHANGE -->
+    <section class="ci-contact-options">
+      <div class="container">
+
+        <div class="ci-contact-options-head">
+          <p class="ci-section-label dark">Premier échange</p>
+
+          <h2>
+            Une prise de contact simple et directe.
+          </h2>
 
           <p>
-            Pour mieux comprendre votre projet, nous pouvons nous déplacer directement chez vous
-            et échanger sur vos besoins.
+            Selon la nature du projet, les premiers échanges peuvent se faire
+            à distance ou être complétés par une visite sur site afin de mieux
+            comprendre les espaces, les contraintes et les usages réels.
           </p>
-
-          <p>
-            Nous utilisons également des outils numériques modernes pour collaborer efficacement
-            à distance et optimiser notre réactivité.
-          </p>
-
-          <p class="highlight">Contactez-nous dès maintenant :</p>
-
-          <ul class="contact-list">
-            <li>Par téléphone pour un premier échange</li>
-            <li>Via le formulaire ci-dessous en détaillant votre projet</li>
-          </ul>
-
-          <p class="footer-text">Nous vous répondrons dans les plus brefs délais.</p>
-
-          <div class="hero-links">
-            <img src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Caract%C3%A9ristiques/R%C3%A9activit%C3%A9%202.png" alt="Intervention rapide" loading="lazy" />
-            <img src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Caract%C3%A9ristiques/R%C3%A9activit%C3%A9%20vert.png" alt="Réactivité" loading="lazy" />
-            <img src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Caract%C3%A9ristiques/Collaboration.png" alt="Collaboration" loading="lazy" />
-          </div>
         </div>
 
-        <!-- IMAGE -->
-        <div class="hero-art">
-          <img
-            class="bizcard-img"
-            src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Verso_carte_final%20v11.png"
-            alt="Carte de visite — Clain Implantation"
-            loading="lazy"
-          />
+        <div class="ci-contact-options-grid">
+
+          <article>
+            <span>01</span>
+            <h3>Par formulaire</h3>
+            <p>
+              Décrivez votre besoin, les premières contraintes identifiées
+              et les délais envisagés.
+            </p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Par téléphone</h3>
+            <p>
+              Un premier échange permet de clarifier rapidement le sujet
+              et de définir les prochaines étapes utiles.
+            </p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Sur site ou à distance</h3>
+            <p>
+              Les échanges peuvent être réalisés en visioconférence
+              ou directement dans vos locaux lorsque le contexte le nécessite.
+            </p>
+          </article>
+
         </div>
 
       </div>
     </section>
 
-    <section class="section">
-      <div class="grid">
-        <article class="card">
-          <h3>Formulaire de demande de renseignements</h3>
 
-          <!-- ✅ FORMULAIRE NETLIFY -->
+    <!-- FORMULAIRE -->
+    <section
+      class="ci-contact-form-section"
+      id="formulaire-contact"
+    >
+      <div class="container ci-contact-form-layout">
+
+        <div class="ci-contact-form-intro">
+
+          <p class="ci-section-label">Votre demande</p>
+
+          <h2>
+            Donnez-nous les premières informations utiles.
+          </h2>
+
+          <p>
+            Il n’est pas nécessaire de disposer immédiatement d’un cahier des charges
+            complet. Quelques informations permettent déjà de comprendre le contexte
+            et d’organiser un premier échange.
+          </p>
+
+          <div class="ci-contact-help-list">
+
+            <div>
+              <span>01</span>
+              <strong>Votre besoin principal</strong>
+            </div>
+
+            <div>
+              <span>02</span>
+              <strong>Les contraintes déjà identifiées</strong>
+            </div>
+
+            <div>
+              <span>03</span>
+              <strong>Les documents éventuellement disponibles</strong>
+            </div>
+
+            <div>
+              <span>04</span>
+              <strong>Le calendrier ou l’échéance souhaitée</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <article class="ci-contact-form-card">
+
+          <p class="ci-section-label dark">Formulaire</p>
+
+          <h3>
+            Demande de renseignements
+          </h3>
+
           <form
-            class="form"
+            class="form ci-contact-form"
             name="contact"
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
             action="/merci.html"
           >
-            <!-- Obligatoire Netlify -->
-            <input type="hidden" name="form-name" value="contact" />
 
-            <!-- Anti-spam -->
+            <input
+              type="hidden"
+              name="form-name"
+              value="contact"
+            />
+
             <p hidden>
               <label>
                 Ne pas remplir :
@@ -105,80 +237,188 @@
               </label>
             </p>
 
+
             <div class="form-row">
-              <div class="field">
-                <label for="nom">Nom <span class="required">*</span></label>
-                <input id="nom" name="nom" required />
-              </div>
 
               <div class="field">
-                <label for="email">Email <span class="required">*</span></label>
-                <input id="email" name="email" type="email" required />
+                <label for="nom">
+                  Nom
+                  <span class="required">*</span>
+                </label>
+
+                <input
+                  id="nom"
+                  name="nom"
+                  autocomplete="name"
+                  required
+                />
               </div>
+
+
+              <div class="field">
+                <label for="email">
+                  E-mail
+                  <span class="required">*</span>
+                </label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
             </div>
 
+
             <div class="form-row">
+
               <div class="field">
-                <label for="tel">Téléphone</label>
-                <input id="tel" name="tel" />
+                <label for="tel">
+                  Téléphone
+                </label>
+
+                <input
+                  id="tel"
+                  name="tel"
+                  type="tel"
+                  autocomplete="tel"
+                />
               </div>
 
-              <div class="field">
-                <label for="secteur_input">Secteur</label>
 
-                <div class="cselect" data-name="secteur" id="secteurSelect">
-                  <button type="button" class="cselect-btn">
+              <div class="field">
+
+                <label for="secteur_input">
+                  Secteur
+                </label>
+
+                <div
+                  class="cselect"
+                  data-name="secteur"
+                  id="secteurSelect"
+                >
+
+                  <button
+                    type="button"
+                    class="cselect-btn"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                  >
                     <span class="cselect-value">Industrie</span>
                     <span class="cselect-chev">▾</span>
                   </button>
 
-                  <div class="cselect-list">
-                    <button type="button" class="cselect-option" data-value="Industrie">Industrie</button>
-                    <button type="button" class="cselect-option" data-value="Particulier">Particulier</button>
-                    <button type="button" class="cselect-option" data-value="Autre">Autre</button>
+                  <div
+                    class="cselect-list"
+                    role="listbox"
+                  >
+                    <button
+                      type="button"
+                      class="cselect-option"
+                      data-value="Industrie"
+                    >
+                      Industrie
+                    </button>
+
+                    <button
+                      type="button"
+                      class="cselect-option"
+                      data-value="PME ou artisan"
+                    >
+                      PME ou artisan
+                    </button>
+
+                    <button
+                      type="button"
+                      class="cselect-option"
+                      data-value="Particulier"
+                    >
+                      Particulier
+                    </button>
+
+                    <button
+                      type="button"
+                      class="cselect-option"
+                      data-value="Autre"
+                    >
+                      Autre
+                    </button>
                   </div>
 
-                  <input type="hidden" name="secteur" id="secteur_input" value="Industrie" />
+                  <input
+                    type="hidden"
+                    name="secteur"
+                    id="secteur_input"
+                    value="Industrie"
+                  />
+
                 </div>
               </div>
+
             </div>
 
+
             <div class="field">
-              <label for="message">Besoin / Contexte <span class="required">*</span></label>
+
+              <label for="message">
+                Besoin et contexte
+                <span class="required">*</span>
+              </label>
+
               <textarea
                 id="message"
                 name="message"
                 required
-                placeholder="Expliquez votre besoin, contraintes, délais, etc."
+                placeholder="Présentez votre besoin, les contraintes connues, les documents disponibles et les délais envisagés."
               ></textarea>
+
             </div>
 
-            <p class="form-note">* Obligatoire</p>
 
-            <div class="hero-actions">
-              <button class="btn primary" type="submit">Envoyer</button>
-            </div>
+            <p class="form-note">
+              Les champs accompagnés d’un astérisque sont obligatoires.
+            </p>
+
+
+            <button
+              class="v2-btn v2-btn-primary ci-contact-submit"
+              type="submit"
+            >
+              Envoyer ma demande
+            </button>
 
           </form>
+
         </article>
+
       </div>
     </section>
+
   </main>
+
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <small>© <span id="year"></span> Clain Implantation</small>
+
+      <small>
+        © <span id="year"></span> Clain Implantation
+      </small>
+
       <div class="footer-links">
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="#" id="manage-cookies">Gérer les cookies</a>
         <a href="renseignement.html">Contact</a>
       </div>
+
     </div>
   </footer>
 
-  <link rel="stylesheet" href="./styles.css" />
+
   <script src="main.js" defer></script>
-  <script src="load-header.js" defer></script>  
+  <script src="load-header.js" defer></script>
   <script src="./consent-manager.js" defer></script>
 
 </body>

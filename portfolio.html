@@ -3,136 +3,173 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- Fix 1 : évite le flash blanc immédiatement -->
+
   <style>
-    html, body { margin: 0; background: #0f2f2f; }
+    html, body { margin: 0; background: #071a1c; }
     body { opacity: 0; transition: opacity .15s ease; }
     body.ready { opacity: 1; }
   </style>
+
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('ready');
     });
   </script>
 
-  <title>Clain Implantation — Prestations</title>
+  <title>Clain Implantation — Réalisations et projets</title>
+  <meta name="description" content="Découvrez progressivement les réalisations, études d’implantation, modélisations 2D/3D et supports de décision développés par Clain Implantation.">
 
   <link rel="icon" type="image/svg+xml" href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20SCU%20V5.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
-<body data-tagline="Prestations • Domaines d'expertise">
-      <!-- HEADER injecté (identique aux autres pages) -->
-      <div id="site-header"></div>
+<body data-tagline="Réalisations • Projets" class="page-portfolio page-portfolio-v2">
+  <div id="site-header"></div>
 
-  <main class="container">
+  <main class="ci-portfolio-page">
 
-    <!-- HERO : badge conservé + bouton contact conservé -->
-    <section class="hero">
-      <div class="hero-inner">
+    <section class="ci-portfolio-hero">
+      <div class="container ci-portfolio-hero-grid">
 
-               <!-- ✅ TEXTE (Réalisations) -->
-                <div class="hero-text">
+        <div class="ci-portfolio-hero-copy">
+          <p class="ci-section-label">Réalisations</p>
 
-                <h2>Nos réalisations</h2>
-     
-                <p class="intro">
-                 <strong>Une structure récente, une expertise confirmée</strong>
-               </p>
-     
-               <p>
-                 Clain Implantation est une société récemment créée, portée par des professionnels
-                 aux parcours éprouvés. Si aucun projet n’a encore été mené sous notre enseigne,
-                 l’expertise qui constitue notre bureau d’études s’est forgée au fil d’années
-                 d’expérience dans l’industrie et les bureaux d’études. Aujourd’hui, nous
-                 mettons cette expérience au service d’une approche plus personnalisée et locale.
-               </p>
-     
-               <p>
-                 Dans les prochaines semaines, cette page s’enrichira progressivement de visuels,
-                 de plans et de retours d’expérience concrets illustrant notre savoir-faire en
-                 situation réelle.
-                 Chaque projet achevé viendra documenter notre capacité à transformer vos contraintes
-                 en solutions viables et pérennes.
-               </p>
-     
-               <p class="highlight">
-                 <strong>Vous avez un projet ? Échangeons.</strong>
-               </p>
-     
-               <p>
-                 Si vous hésitez à confier votre projet à une structure récente, nous comprenons
-                 cette prudence. C’est précisément pour cela que nous privilégions une approche
-                 transparente : un cadrage rigoureux, des livrables documentés et une validation
-                 régulière à chaque étape.
-               </p>
-     
-               <p class="footer-text">
-                 Être parmi nos premiers clients, c’est aussi bénéficier d’une disponibilité et
-                 d’une attention particulière. Contactez-nous pour échanger sur votre besoin :
-                 nous serons ravis de vous présenter notre méthode et nos références personnelles
-                 plus en détail.
-               </p>
+          <h1>
+            Des projets concrets.<br>
+            Des décisions mieux préparées.
+          </h1>
 
-          <!-- ✅ Bouton contact conservé -->
-          <div class="hero-actions">
-            <a class="btn" href="renseignement.html">Contact</a>
+          <p class="ci-portfolio-lead">
+            Cette page rassemblera progressivement des études d’implantation,
+            des scénarios comparatifs, des modélisations 2D/3D et des supports
+            de décision réalisés dans le cadre des missions de Clain Implantation.
+          </p>
+
+          <p class="ci-portfolio-sublead">
+            La structure est récente, mais l’approche repose sur une expérience
+            construite dans l’industrie, la recherche, l’optimisation des procédés
+            et le pilotage de projets techniques. Les premières références seront
+            présentées ici avec l’accord des clients et dans le respect de la confidentialité.
+          </p>
+
+          <div class="v2-actions ci-portfolio-actions">
+            <a class="v2-btn v2-btn-primary" href="renseignement.html">Parler de mon projet</a>
+            <a class="v2-btn v2-btn-secondary" href="prestations.html">Voir les prestations</a>
           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="ci-portfolio-categories">
+      <div class="container">
+
+        <div class="ci-block-head">
+          <p class="ci-section-label dark">Portfolio en construction</p>
+          <h2>Les familles de projets qui seront présentées ici.</h2>
+          <p>
+            Chaque publication aura vocation à montrer le contexte, les contraintes,
+            la méthode retenue et les livrables produits, sans divulguer d’informations sensibles.
+          </p>
+        </div>
+
+        <div class="ci-portfolio-grid">
+
+          <article class="ci-portfolio-card">
+            <span>01</span>
+            <p class="ci-portfolio-card-label">Implantation industrielle</p>
+            <h3>Intégration d’équipements et réorganisation d’espaces</h3>
+            <p>
+              Plans d’implantation, vérification des circulations, accessibilité,
+              maintenance et cohérence avec les flux existants.
+            </p>
+            <strong>Premières références à venir</strong>
+          </article>
+
+          <article class="ci-portfolio-card">
+            <span>02</span>
+            <p class="ci-portfolio-card-label">Études comparatives</p>
+            <h3>Scénarios techniques et arbitrages de projet</h3>
+            <p>
+              Comparaison de plusieurs options, identification des contraintes
+              et mise en forme de supports lisibles pour décider.
+            </p>
+            <strong>Premières références à venir</strong>
+          </article>
+
+          <article class="ci-portfolio-card">
+            <span>03</span>
+            <p class="ci-portfolio-card-label">Modélisation</p>
+            <h3>Vues 2D/3D et supports de présentation</h3>
+            <p>
+              Modèles, schémas, vues techniques et documents destinés à faciliter
+              les échanges avec les équipes, partenaires ou prestataires.
+            </p>
+            <strong>Premières références à venir</strong>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- SECTION : tes badges / cards restent comme tu les as -->
-    <section class="section">
-      <div class="section-head">
-        <h2 class="section-title">Projets :</h2>
-        <p class="section-subtitle">Bientôt disponible..</p>
+    <section class="ci-portfolio-confidential has-section-visual visual-dark">
+      <div class="ci-section-visual bg-confidentiel" aria-hidden="true"></div>
+
+      <div class="container ci-portfolio-confidential-grid">
+        <div>
+          <p class="ci-section-label">Confidentialité</p>
+          <h2>Montrer la méthode sans exposer vos informations sensibles.</h2>
+        </div>
+
+        <div class="ci-portfolio-confidential-panel">
+
+        <h3>Une expertise qui évolue avec chaque projet</h3>
+      
+        <p>
+          Chez Clain Implantation, chaque mission constitue une opportunité
+          d’approfondir l’expertise acquise. Les environnements industriels,
+          les contraintes techniques et les objectifs de chaque client sont différents.
+          Cette diversité entretient un apprentissage permanent, enrichit les méthodes
+          de travail, affine les analyses et renforce la capacité à proposer des solutions
+          toujours plus pertinentes.
+        </p>
+      
+        <p>
+          Cette progression continue s’accompagne d’un engagement essentiel :
+          la confidentialité. Les informations confiées à Clain Implantation —
+          implantations, procédés, données techniques, stratégies d’investissement
+          ou projets en développement — demeurent strictement protégées.
+          Chaque projet possède sa propre importance, son savoir-faire et parfois
+          un avantage concurrentiel qui méritent le plus grand respect.
+        </p>
+      
+        <p>
+          Les réalisations présentées sur ce site le seront donc uniquement avec
+          l’accord de leurs propriétaires ou après une anonymisation complète
+          des données sensibles. L’objectif n’est pas de dévoiler les projets des clients,
+          mais d’illustrer la démarche, la méthode de travail et la qualité des livrables
+          produits, tout en préservant leur caractère privé.
+        </p>
+      
       </div>
+      </div>
+    </section>
 
-      <div class="grid">
-        <article class="card third">
-          <div class="thumb" aria-hidden="true">
-            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
-              <rect width="800" height="420" fill="rgba(233,241,255,0.06)"/>
-              <path d="M120 290 h560" stroke="rgba(233,241,255,0.18)" stroke-width="10" stroke-linecap="round"/>
-              <rect x="160" y="120" width="220" height="140" rx="14" fill="rgba(233,241,255,0.10)"/>
-              <rect x="420" y="150" width="220" height="110" rx="14" fill="rgba(233,241,255,0.08)"/>
-            </svg>
-          </div>
-          <h3>  ...</h3>
-          <p> ...</p>
-        </article>
-
-        <article class="card third">
-          <div class="thumb" aria-hidden="true">
-            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
-              <rect width="800" height="420" fill="rgba(233,241,255,0.06)"/>
-              <circle cx="280" cy="210" r="90" fill="rgba(233,241,255,0.10)"/>
-              <circle cx="520" cy="210" r="120" fill="rgba(233,241,255,0.08)"/>
-              <path d="M150 330 h500" stroke="rgba(233,241,255,0.18)" stroke-width="10" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>  ...</h3>
-          <p> ...</p>
-        </article>
-
-        <article class="card third">
-          <div class="thumb" aria-hidden="true">
-            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
-              <rect width="800" height="420" fill="rgba(233,241,255,0.06)"/>
-              <path d="M160 120 h480 v220 h-480 z" fill="rgba(233,241,255,0.09)"/>
-              <path d="M200 170 h380" stroke="rgba(233,241,255,0.20)" stroke-width="10" stroke-linecap="round"/>
-              <path d="M200 220 h320" stroke="rgba(233,241,255,0.16)" stroke-width="10" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>  ...</h3>
-          <p> ...</p>
-        </article>
+    <section class="ci-portfolio-coming">
+      <div class="container">
+        <div class="ci-portfolio-coming-card">
+          <p class="ci-section-label dark">À venir</p>
+          <h2>Une page appelée à évoluer avec les projets.</h2>
+          <p>
+            Les premières études publiables viendront enrichir cette page au fil des missions :
+            plans, vues 3D, extraits de scénarios, avant/après et retours d’expérience.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -145,15 +182,12 @@
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="#" id="manage-cookies">Gérer les cookies</a>
         <a href="renseignement.html">Contact</a>
-      </div>      
+      </div>
     </div>
   </footer>
 
-  <link rel="stylesheet" href="./styles.css">
   <script src="main.js" defer></script>
-  <script src="load-header.js" defer></script>  
-  <script src="./consent-manager.js" defer></script>  
-  
-  
+  <script src="load-header.js" defer></script>
+  <script src="./consent-manager.js" defer></script>
 </body>
 </html>
