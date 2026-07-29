@@ -1,33 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<style>
     html, body { margin: 0; background: #071a1c; }
     body { opacity: 0; transition: opacity .15s ease; }
     body.ready { opacity: 1; }
   </style>
-
-  <script>
+<script>
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('ready');
     });
   </script>
-
-  <title>Clain Implantation — Prestations</title>
-  <meta name="description" content="Prestations de Clain Implantation : assistance à la maîtrise d’ouvrage, études d’implantation, modélisation 2D/3D, supports de consultation et préparation de dossiers techniques." />
-
-  <link rel="icon" type="image/svg+xml" href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20SCU%20V5.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./styles.css">
-
-  <style>
+<title>Clain Implantation — Prestations d’ingénierie, BIM et implantation</title>
+<meta content="Études d’implantation, assistance à maîtrise d’ouvrage, scan 3D, nuages de points, BIM, modélisation 2D/3D, consultations et dossiers techniques." name="description"/>
+<link href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20SCU%20V5.png" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="./styles.css" rel="stylesheet"/>
+<style>
     /* Prestations : suppression du rail d’icônes bleues */
     .ci-services-domains-grid-full{
       grid-template-columns:1fr !important;
@@ -37,240 +31,154 @@
       width:100% !important;
     }
   </style>
-</head>
-
-<body data-tagline="Prestations • Services" class="page-prestations page-services-v2">
-  <div id="site-header"></div>
-
-  <main class="ci-services-page">
-
-    <section class="ci-services-hero">
-      <div class="container ci-services-hero-grid">
-        <div class="ci-services-hero-copy">
-          <p class="ci-section-label">Prestations</p>
-
-          <h1>
-            Des prestations techniques adaptées à vos projets.
-          </h1>
-
-          <p class="ci-services-lead">
-            Chaque mission est cadrée selon votre besoin réel : clarifier une idée,
-            comparer plusieurs scénarios, préparer une consultation ou produire un support
-            exploitable pour décider.
-          </p>
-
-          <p class="ci-services-sublead">
-            L’objectif n’est pas d’ajouter de la complexité, mais de transformer vos contraintes
-            terrain en documents lisibles, utiles et directement actionnables par vos équipes,
-            vos partenaires ou vos prestataires.
-          </p>
-
-          <div class="v2-actions ci-services-actions">
-            <a class="v2-btn v2-btn-primary" href="renseignement.html">Décrire mon besoin</a>
-          </div>
-        </div>
-    </section>
-
-    <section class="ci-services-domains" id="domaines" aria-label="Nos domaines d'intervention">
-      <div class="container">
-        <article class="ci-services-domains-card">
-        <div class="ci-services-domains-grid ci-services-domains-grid-photo">
-            <div class="ci-services-domains-text">
-              <p class="ci-section-label dark">Domaines d’intervention</p>
-
-              <h2>Une intervention modulable selon votre besoin technique.</h2>
-
-              <div class="ci-service-lines">
-                <article>
-                  <span>01</span>
-                  <div>
-                    <h3>Assistance à la maîtrise d’ouvrage</h3>
-                    <p>
-                      Accompagnement au pilotage de vos projets : avant-projets simplifiés,
-                      cadrage du besoin, définition des orientations techniques et premières
-                      bases de décision.
-                    </p>
-                  </div>
-                </article>
-
-                <article>
-                  <span>02</span>
-                  <div>
-                    <h3>Études d’implantation</h3>
-                    <p>
-                      Optimisation de vos espaces de production, d’entreposage ou de service,
-                      en intégrant les flux, l’ergonomie, la sécurité, la maintenance et les
-                      contraintes d’exploitation.
-                    </p>
-                  </div>
-                </article>
-
-                <article>
-                  <span>03</span>
-                  <div>
-                    <h3>Études de réseaux et installations fluides</h3>
-                    <p>
-                      Présentation des possibilités d’aménagement de vos installations fluides
-                      — eau, air comprimé, vapeur ou produits — avec une lecture orientée normes,
-                      accessibilité, sécurité et maintenance.
-                    </p>
-                  </div>
-                </article>
-
-                <article>
-                  <span>04</span>
-                  <div>
-                    <h3>Scan 3D et modélisation</h3>
-                    <p>
-                      Relevés terrain, base fiable pour vos projets, intégration de nuages de points,
-                      contrôle d’encombrement et modélisations pour mieux se projeter.
-                    </p>
-                  </div>
-                </article>
-
-                <article>
-                  <span>05</span>
-                  <div>
-                    <h3>Supports pour consultations techniques</h3>
-                    <p>
-                      Préparation d’appels d’offres : spécifications techniques, analyse comparative
-                      des propositions et recommandations argumentées.
-                    </p>
-                  </div>
-                </article>
-
-                <article>
-                  <span>06</span>
-                  <div>
-                    <h3>Dossiers réglementaires et administratifs</h3>
-                    <p>
-                      Synthèse des éléments nécessaires aux démarches industrielles : notes descriptives,
-                      schémas de présentation et documents de cadrage pour dossiers ICPE ou autorisations.
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <aside class="ci-services-domains-visual" aria-label="Illustration des prestations">
-            <img
-              src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Fond%20de%20page/Assemblage%20pr%C3%A9stations%20v2.png"
-              alt="Illustration des prestations de Clain Implantation"
-              loading="lazy"
-            >
-          </aside>
-
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="ci-services-method has-section-visual visual-dark" aria-label="Notre méthode de travail">
-      <div class="ci-section-visual bg-deroule-mission" aria-hidden="true"></div>
-
-      <div class="container">
-        <div class="ci-block-head">
-          <p class="ci-section-label">Déroulé de mission</p>
-          <h2>Une méthode simple, structurée et progressive.</h2>
-          <p>
-            La mission avance par étapes courtes : cadrer, concevoir, comparer,
-            ajuster puis livrer des supports exploitables.
-          </p>
-        </div>
-
-        <div class="ci-services-method-grid">
-          <article>
-            <span>01</span>
-            <h3>Cadrage</h3>
-            <p>
-              Définition des objectifs, contraintes, délais et livrables attendus.
-              Cette phase permet de recueillir les données nécessaires et de poser un plan de mission clair.
-            </p>
-          </article>
-
-          <article>
-            <span>02</span>
-            <h3>Conception</h3>
-            <p>
-              Élaboration de scénarios d’implantation ou de solutions techniques,
-              avec identification des compromis et ajustements par itérations.
-            </p>
-          </article>
-
-          <article>
-            <span>03</span>
-            <h3>Livrables</h3>
-            <p>
-              Production des documents utiles à la suite du projet : plans, modélisations,
-              notes techniques, supports de consultation ou tableaux de synthèse.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="ci-services-results" aria-label="Ce que vous recevez et éléments nécessaires">
-      <div class="container ci-services-results-grid">
-        <article class="ci-services-result-card">
-          <p class="ci-section-label dark">Livrables</p>
-          <h2>Ce que vous recevez.</h2>
-          <p>Selon la nature de la demande et de votre projet, les livrables peuvent comprendre :</p>
-
-          <ul>
-            <li><strong>Schémas d’implantation :</strong> représentations générales, plans de coupe et vues de détail à titre indicatif.</li>
-            <li><strong>Modélisations 3D et rendus visuels :</strong> visualisation et exploration de différentes options d’aménagement.</li>
-            <li><strong>Analyses de faisabilité :</strong> identification des contraintes, évaluation des solutions et recommandations.</li>
-            <li><strong>Documents de consultation :</strong> spécifications et orientations techniques pour vos fournisseurs.</li>
-            <li><strong>Comparatifs et recommandations :</strong> analyses multicritères pour éclairer vos décisions d’investissement.</li>
-            <li><strong>Définitions budgétaires :</strong> estimations financières basées sur l’analyse des offres reçues.</li>
-          </ul>
-        </article>
-
-        <article class="ci-services-result-card">
-          <p class="ci-section-label dark">Démarrage</p>
-          <h2>Avancer ensemble.</h2>
-          <p>Afin de cadrer efficacement votre projet, voici les éléments utiles à transmettre :</p>
-
-          <ul>
-            <li><strong>Documents existants :</strong> plans disponibles, croquis, photographies, relevés de cotes ou documentations d’équipements.</li>
-            <li><strong>Contraintes à intégrer :</strong> accès, sécurité, maintenance, flux à respecter ou environnement réglementaire.</li>
-            <li><strong>Objectifs du projet :</strong> optimisation des flux, ergonomie, maîtrise des coûts, productivité ou mise en conformité.</li>
-            <li><strong>Calendrier souhaité :</strong> délais envisagés pour les études, consultations et réalisation.</li>
-          </ul>
-
-          <p>
-            Plus les informations disponibles sont précises en amont, plus la proposition peut être adaptée au besoin réel.
-          </p>
-        </article>
-
-        <article class="ci-services-disclaimer">
-          <span>Cadre d’intervention</span>
-          <p>
-            Les prestations consistent en un accompagnement conseil. Les études, schémas,
-            recommandations et documents produits constituent des outils d’aide à la décision
-            à caractère indicatif. Ils ne se substituent pas aux études d’exécution ou validations
-            techniques qui demeurent sous la responsabilité du client et/ou des bureaux d’études spécialisés.
-          </p>
-        </article>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <small>© <span id="year"></span> Clain Implantation</small>
-      <div class="footer-links">
-        <a href="mentions-legales.html">Mentions légales</a>
-        <a href="#" id="manage-cookies">Gérer les cookies</a>
-        <a href="renseignement.html">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="main.js" defer></script>
-  <script src="load-header.js" defer></script>
-  <script src="./consent-manager.js" defer></script>
+</meta></head>
+<body class="page-prestations page-services-v2" data-tagline="Prestations • Services">
+<div id="site-header"></div>
+<main class="ci-services-page">
+<section class="ci-services-hero">
+<div class="container ci-services-hero-grid">
+<div class="ci-services-hero-copy">
+<p class="ci-section-label">Prestations</p>
+<h1>Des études ciblées pour préparer, comparer et cadrer vos projets.</h1>
+<p class="ci-services-lead">L’intervention peut porter sur une question précise — intégrer un équipement, vérifier un encombrement, relever un existant — ou couvrir plusieurs étapes d’un projet plus large.</p>
+<p class="ci-services-sublead">Le périmètre, le niveau de détail et les formats de restitution sont définis selon la décision à préparer, les données disponibles et les validations qui relèvent d’autres spécialistes.</p>
+<div class="v2-actions ci-services-actions">
+<a class="v2-btn v2-btn-primary" href="renseignement.html">Présenter mon projet</a>
+</div>
+</div>
+</div></section>
+<section aria-label="Nos domaines d'intervention" class="ci-services-domains" id="domaines">
+<div class="container">
+<article class="ci-services-domains-card">
+<div class="ci-services-domains-grid ci-services-domains-grid-photo">
+<div class="ci-services-domains-text">
+<p class="ci-section-label dark">Domaines d’intervention</p>
+<h2>Des compétences mobilisées seules ou en chaîne d’étude.</h2>
+<div class="ci-service-lines">
+<article>
+<span>01</span>
+<div>
+<h3>Assistance à la maîtrise d’ouvrage</h3>
+<p>Cadrage fonctionnel, clarification du besoin, identification des parties prenantes, préparation des arbitrages et accompagnement des premières phases du projet.</p>
+</div>
+</article>
+<article>
+<span>02</span>
+<div>
+<h3>Études d’implantation</h3>
+<p>Analyse des surfaces, flux, postes, accès, maintenance, sécurité et possibilités d’évolution pour construire et comparer des scénarios réalistes.</p>
+</div>
+</article>
+<article>
+<span>03</span>
+<div>
+<h3>Études de réseaux et installations fluides</h3>
+<p>Principes d’aménagement et de cheminement pour l’eau, l’air comprimé, la vapeur ou les produits, avec prise en compte de l’accessibilité, de la maintenance et des interfaces.</p>
+</div>
+</article>
+<article>
+<span>04</span>
+<div>
+<h3>Scan 3D, nuages de points et modélisation</h3>
+<p>Acquisition de l’existant, exploitation des nuages de points, contrôle d’encombrement et création de plans ou maquettes servant de base aux études.</p>
+</div>
+</article>
+<article>
+<span>05</span>
+<div>
+<h3>Supports pour consultations techniques</h3>
+<p>Cahiers des besoins, spécifications fonctionnelles, plans de consultation, grilles de comparaison et analyse argumentée des propositions reçues.</p>
+</div>
+</article>
+<article>
+<span>06</span>
+<div>
+<h3>Dossiers réglementaires et administratifs</h3>
+<p>Préparation de notes descriptives, schémas et pièces graphiques destinés à structurer un dossier, en coordination avec les organismes ou spécialistes habilités lorsque nécessaire.</p>
+</div>
+</article>
+</div>
+</div>
+<aside aria-label="Illustration des prestations" class="ci-services-domains-visual">
+<img alt="Illustration des prestations de Clain Implantation" loading="lazy" src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Fond%20de%20page/Assemblage%20pr%C3%A9stations%20v2.png"/>
+</aside>
+</div>
+</article>
+</div>
+</section>
+<section aria-label="Notre méthode de travail" class="ci-services-method has-section-visual visual-dark">
+<div aria-hidden="true" class="ci-section-visual bg-deroule-mission"></div>
+<div class="container">
+<div class="ci-block-head">
+<p class="ci-section-label">Déroulé d’étude</p>
+<h2>Une méthode unique, adaptée à la profondeur de la mission.</h2>
+<p>Qu’il s’agisse d’une vérification ponctuelle ou d’une étude complète, la mission repose sur trois phases clairement identifiées.</p>
+</div>
+<div class="ci-services-method-grid">
+<article>
+<span>01</span>
+<h3>Cadrage &amp; données</h3>
+<p>Définir la question à résoudre, le niveau de précision attendu, les hypothèses, les interfaces et les informations nécessaires à l’étude.</p>
+</article>
+<article>
+<span>02</span>
+<h3>Étude &amp; arbitrage</h3>
+<p>Modéliser l’existant, construire les scénarios, vérifier les contraintes et comparer les solutions selon des critères techniques et opérationnels.</p>
+</article>
+<article>
+<span>03</span>
+<h3>Restitution &amp; transmission</h3>
+<p>Présenter les conclusions, expliciter les limites, remettre les plans ou maquettes et fournir une base exploitable pour la décision suivante.</p>
+</article>
+</div>
+</div>
+</section>
+<section aria-label="Ce que vous recevez et éléments nécessaires" class="ci-services-results">
+<div class="container ci-services-results-grid">
+<article class="ci-services-result-card">
+<p class="ci-section-label dark">Selon la nature de la mission, la restitution peut comprendre :</p>
+<h2>Des livrables adaptés à leur usage.</h2>
+<p>Selon la nature de la demande et de votre projet, les livrables peuvent comprendre :</p>
+<ul>
+<li><strong>Plans techniques :</strong> implantations cotées, coupes, élévations, zones fonctionnelles et détails utiles à la compréhension.</li>
+<li><strong>Maquettes 3D ou BIM :</strong> représentation mesurable de l’existant et des scénarios étudiés.</li>
+<li><strong>Nuages de points et relevés :</strong> données de référence issues de l’acquisition terrain, préparées selon l’usage prévu.</li>
+<li><strong>Notes de faisabilité :</strong> hypothèses, contraintes identifiées, points de vigilance et recommandations.</li>
+<li><strong>Dossiers de consultation :</strong> besoins fonctionnels, plans, spécifications et éléments de comparaison destinés aux fournisseurs.</li>
+<li><strong>Matrices de choix et estimations :</strong> synthèses multicritères et enveloppes établies à partir des données ou offres disponibles.</li>
+</ul>
+</article>
+<article class="ci-services-result-card">
+<p class="ci-section-label dark">Les informations suivantes permettent de définir un périmètre précis et des hypothèses explicites :</p>
+<h2>Les éléments qui fiabilisent l’étude.</h2>
+<p>Afin de cadrer efficacement votre projet, voici les éléments utiles à transmettre :</p>
+<ul>
+<li><strong>Plans et documents existants :</strong> fichiers 2D/3D, croquis, photographies, relevés, notices ou historiques de modification.</li>
+<li><strong>Données des équipements :</strong> dimensions, masses, raccordements, zones de maintenance, conditions d’accès et exigences fournisseur.</li>
+<li><strong>Contraintes du site :</strong> structure, réseaux, sécurité, flux, fonctionnement, réglementation et continuité d’activité.</li>
+<li><strong>Objectifs et calendrier :</strong> décision attendue, critères prioritaires, intervenants concernés et échéances du projet.</li>
+</ul>
+<p>Lorsque certaines données manquent, elles sont identifiées comme hypothèses, réserves ou besoins de relevé complémentaire afin de ne pas créer une précision artificielle.</p>
+</article>
+<article class="ci-services-disclaimer">
+<span>Cadre et responsabilités</span>
+<p>Les prestations constituent des missions d’étude, de conseil et d’aide à la décision. Sauf mention contractuelle spécifique, les plans, maquettes, schémas et recommandations ne sont pas des documents d’exécution et ne remplacent ni les notes de calcul, ni les validations réglementaires, ni les études relevant de bureaux d’études ou professionnels habilités.</p>
+</article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<small>© <span id="year"></span> Clain Implantation</small>
+<div class="footer-links">
+<a href="mentions-legales.html">Mentions légales</a>
+<a href="#" id="manage-cookies">Gérer les cookies</a>
+<a href="renseignement.html">Contact</a>
+</div>
+</div>
+</footer>
+<script defer="" src="main.js"></script>
+<script defer="" src="load-header.js"></script>
+<script defer="" src="./consent-manager.js"></script>
 </body>
 </html>
-

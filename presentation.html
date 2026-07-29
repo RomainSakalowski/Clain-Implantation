@@ -1,420 +1,223 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Fix 1 : évite le flash blanc immédiatement -->
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- Fix 1 : évite le flash blanc immédiatement -->
+<style>
     html, body { margin: 0; background: #071a1c; }
     body { opacity: 0; transition: opacity .15s ease; }
     body.ready { opacity: 1; }
   </style>
-  <script>
+<script>
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('ready');
     });
   </script>
-
-  <title>Clain Implantation — Présentation</title>
-  <meta name="description" content="Découvrez Clain Implantation, bureau d’études indépendant en implantation industrielle, optimisation d’espaces, faisabilité technique et modélisation 2D/3D.">
-
-  <link rel="icon" type="image/svg+xml" href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20SCU%20V5.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-
-  <link rel="stylesheet" href="./styles.css">
+<title>Clain Implantation — Expertise, parcours et outils</title>
+<meta content="Découvrez le parcours, l’approche terrain et les outils numériques de Clain Implantation, bureau d’études indépendant en génie industriel et implantation." name="description"/>
+<link href="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Favicon%20SCU%20V5.png" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="./styles.css" rel="stylesheet"/>
 </head>
-
-<body data-tagline="Présentation" class="page-presentation">
-      <!-- HEADER injecté (identique aux autres pages) -->
-      <div id="site-header"></div>
-      
-      <main class="ci-about-page">
-
-      <section class="ci-about-hero-v2">
-        <div class="container ci-about-hero-grid-v2">
-    
-          <div class="ci-about-main">
-            <p class="ci-section-label">Présentation</p>
-    
-            <h1>
-              Une expertise terrain pour clarifier vos projets techniques.
-            </h1>
-    
-            <p class="ci-about-lead-v2">
-              Clain Implantation accompagne les industriels, PME, artisans et porteurs de projets
-              dans leurs besoins d’implantation, d’optimisation d’espaces, de faisabilité technique
-              et de modélisation 2D/3D.
-            </p>
-    
-            <p>
-              L’objectif est simple : transformer une contrainte, une idée ou un besoin d’aménagement
-              en support clair, visualisable et exploitable avant d’engager un investissement,
-              un déplacement ou des travaux.
-            </p>
-    
-            <div class="v2-actions ci-about-actions">
-              <a class="v2-btn v2-btn-primary" href="prestations.html">Voir les prestations</a>
-              <a class="v2-btn v2-btn-secondary" href="renseignement.html">Nous contacter</a>
-            </div>
-          </div>
-    
-          <aside class="ci-about-identity-card">
-            <span>Bureau d’études indépendant</span>
-    
-            <strong>
-              Un interlocuteur unique,
-              une méthode claire,
-              des supports exploitables.
-            </strong>
-    
-            <ul>
-              <li>Implantation industrielle</li>
-              <li>Optimisation d’espaces</li>
-              <li>Études de faisabilité</li>
-              <li>Modélisation 2D / 3D</li>
-            </ul>
-          </aside>
-    
-        </div>
-      </section>
-
-    <section class="ci-founder has-section-visual visual-dark">
-      <div class="ci-section-visual bg-bureau-ingenieur" aria-hidden="true"></div>
-      <div class="container ci-founder-grid">
-    
-        <div class="ci-founder-title">
-          <p class="ci-section-label">Parcours</p>
-    
-          <h2>
-            Une expérience construite entre terrain, R&amp;D, procédés et projets industriels.
-          </h2>
-        </div>
-    
-        <div class="ci-founder-panel">
-    
-          <p>
-            Derrière Clain Implantation, il y a un parcours en génie industriel construit
-            au contact d’environnements variés : industrie automobile, agroalimentaire,
-            centre de recherche, usines en Europe et sites de production spécialisés.
-          </p>
-    
-          <p>
-            Ces expériences ont permis d’intervenir sur des sujets très concrets :
-            mise en service de nouvelles lignes de production, plans d’expérience,
-            essais en laboratoire, conception de prototypes, industrialisation,
-            optimisation d’espaces et amélioration des flux.
-          </p>
-    
-          <p>
-            Depuis plusieurs années, ce parcours se poursuit dans l’optimisation industrielle,
-            avec le pilotage de projets d’investissement visant à améliorer la performance
-            opérationnelle, dont un projet de travaux neufs au budget de plusieurs millions d’euros.
-          </p>
-    
-          <p>
-            Cette culture projet nourrit l’approche de Clain Implantation :
-            comprendre rapidement un sujet, structurer les contraintes, consulter les bons
-            interlocuteurs, construire des scénarios et transformer une idée en support clair,
-            visualisable et exploitable.
-          </p>
-    
-          <div class="ci-founder-proof">
-    
-            <div>
-              <span>Recherche</span>
-              <strong>Plans d’expérience · prototypes · industrialisation</strong>
-            </div>
-    
-            <div>
-              <span>Industrie</span>
-              <strong>Lignes de production · usines · contraintes terrain</strong>
-            </div>
-    
-            <div>
-              <span>Projet</span>
-              <strong>Travaux neufs · consultations · budget &gt; 2,5 M€</strong>
-            </div>
-    
-            <div>
-              <span>Outils</span>
-              <strong>BIM · 2D/3D · modélisation · technologies évolutives</strong>
-            </div>
-    
-          </div>
-    
-        </div>
-    
-      </div>
-    </section>
-    
-    <section class="ci-about-paper">
-      <div class="container ci-about-paper-grid">
-
-        <div class="ci-about-paper-title">
-          <p class="ci-section-label dark">Mission</p>
-
-          <h2>
-            Rendre vos projets plus lisibles avant de passer à l’action.
-          </h2>
-        </div>
-
-        <div class="ci-about-mission-cards">
-
-          <article>
-            <span>01</span>
-            <h3>Comprendre</h3>
-            <p>
-              Identifier le besoin réel, les contraintes terrain, les surfaces disponibles,
-              les flux existants et les points bloquants.
-            </p>
-          </article>
-
-          <article>
-            <span>02</span>
-            <h3>Structurer</h3>
-            <p>
-              Organiser les options possibles, comparer les scénarios et rendre les arbitrages
-              plus simples à visualiser.
-            </p>
-          </article>
-
-          <article>
-            <span>03</span>
-            <h3>Décider</h3>
-            <p>
-              Produire des plans, vues, modélisations et supports clairs pour échanger,
-              valider ou présenter le projet.
-            </p>
-          </article>
-
-        </div>
-
-        <div class="ci-about-mission-wide">
-          <p>
-            Une implantation ne se résume pas à positionner des équipements sur un plan.
-            Elle implique des flux, des usages, des accès, des contraintes techniques,
-            des arbitrages budgétaires et des décisions à sécuriser.
-          </p>
-
-          <p>
-            Il n’existe ni petit projet, ni projet véritablement simple.
-            Chaque sujet qui nous est confié mérite une attention particulière,
-            car deux projets visuellement proches peuvent présenter des réalités
-            très différentes en matière de structure, d’environnement, de budget,
-            de réglementation, de maintenance ou de planning.
-          </p>
-
-          <p>
-            L’objectif est d’identifier ces différences, y compris lorsqu’elles
-            ne sont pas immédiatement visibles, afin d’éviter les solutions
-            standardisées et de prendre les décisions réellement adaptées au contexte.
-          </p>
-        </div>
-
-        <div class="ci-about-project-comparison">
-
-          <figure>
-            <img
-              src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Fond%20de%20page/Pont.png"
-              alt="Premier projet de pont étudié dans son contexte technique"
-              loading="eager"
-            >
-            <figcaption>Projet A</figcaption>
-          </figure>
-
-          <span class="ci-about-project-difference" aria-hidden="true">≠</span>
-
-          <figure>
-            <img
-              src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Fond%20de%20page/Pont%20xl.png"
-              alt="Second projet de pont présentant des contraintes différentes"
-              loading="eager"
-            >
-            <figcaption>Projet B</figcaption>
-          </figure>
-
-        </div>
-
-      </div>
-    </section>
-
-
-      <section class="ci-about-network">
-        <div class="container ci-about-network-grid">
-    
-          <div class="ci-about-network-title">
-            <p class="ci-section-label">Expertise</p>
-    
-            <h2>
-              Une compétence centrale,
-              un réseau mobilisable.
-            </h2>
-          </div>
-    
-          <div class="ci-about-network-panel">
-            <p>
-              Clain Implantation reste une structure indépendante : le suivi est direct,
-              les échanges sont simples et la vision du projet reste continue du début à la fin.
-            </p>
-    
-            <p>
-              Selon les besoins, des professionnels expérimentés peuvent être mobilisés autour
-              du projet : bureau d’études, terrain, procédés, travaux, maintenance ou expertise
-              technique spécifique. Cette organisation permet d’enrichir l’analyse sans multiplier
-              inutilement les interlocuteurs.
-            </p>
-    
-            <p>
-              Cette combinaison entre formation technique, expérience industrielle et regard terrain
-              permet de proposer des solutions réalistes, structurées et adaptées aux contraintes
-              opérationnelles.
-            </p>
-          </div>
-    
-        </div>
-      </section>
-    
-
-    
-      <section class="ci-about-sectors">
-        <div class="container">
-    
-          <div class="ci-block-head">
-            <p class="ci-section-label dark">Secteurs d’activité</p>
-    
-            <h2>
-              Une méthode adaptable à différents contextes de projet.
-            </h2>
-    
-            <p>
-              L’approche reste la même : comprendre l’espace, structurer les contraintes,
-              puis produire un support clair pour décider.
-            </p>
-          </div>
-    
-          <div class="ci-about-sector-grid">
-    
-            <article>
-              <span>01</span>
-              <h3>Industrie</h3>
-              <p>
-                Implantation d’équipements, lignes de production, ateliers, zones techniques,
-                études de réaménagement et projets d’investissement.
-              </p>
-            </article>
-    
-            <article>
-              <span>02</span>
-              <h3>PME & artisans</h3>
-              <p>
-                Optimisation d’espaces de travail, aménagement de locaux, organisation des flux,
-                plans techniques et aide à la décision.
-              </p>
-            </article>
-    
-            <article>
-              <span>03</span>
-              <h3>Espaces & projets immobiliers</h3>
-              <p>
-                Aménagement, projection 2D/3D, valorisation d’espaces, visites virtuelles
-                et supports visuels pour mieux se projeter.
-              </p>
-            </article>
-    
-          </div>
-    
-        </div>
-      </section>
-    
-    
-      <section class="ci-about-workflow has-section-visual visual-dark">
-        <div class="ci-section-visual bg-table-architecte" aria-hidden="true"></div>
-        <div class="container ci-about-workflow-grid">
-    
-          <div>
-            <p class="ci-section-label">Méthode de travail</p>
-    
-            <h2>
-              Une progression simple,
-              itérative et validée.
-            </h2>
-          </div>
-    
-          <div class="ci-about-steps">
-    
-            <article>
-              <span>01</span>
-              <h3>Cadrer</h3>
-              <p>Comprendre le besoin, les objectifs prioritaires et les contraintes essentielles.</p>
-            </article>
-    
-            <article>
-              <span>02</span>
-              <h3>Proposer</h3>
-              <p>Construire des scénarios concrets, lisibles et compatibles avec le terrain.</p>
-            </article>
-    
-            <article>
-              <span>03</span>
-              <h3>Ajuster</h3>
-              <p>Faire évoluer les supports par échanges successifs pour coller au besoin réel.</p>
-            </article>
-    
-            <article>
-              <span>04</span>
-              <h3>Livrer</h3>
-              <p>Fournir des documents exploitables : plans, vues, modélisations ou supports de décision.</p>
-            </article>
-    
-          </div>
-    
-        </div>
-      </section>
-    
-    
-      <section class="ci-about-cta-v2">
-        <div class="container">
-          <div class="ci-about-cta-card-v2">
-            <p class="ci-section-label">Échanger</p>
-    
-            <h2>
-              Vous avez un projet à structurer ?
-            </h2>
-    
-            <p>
-              Décrivez votre besoin, vos contraintes ou vos premières idées.
-              Clain Implantation vous aide à poser les bases d’un scénario clair.
-            </p>
-    
-            <a href="renseignement.html" class="v2-btn v2-btn-primary">
-              Parler de mon projet
-            </a>
-          </div>
-        </div>
-      </section>
-    
-    </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <small>© <span id="year"></span> Clain Implantation</small>
-      <div class="footer-links">
-        <a href="mentions-legales.html">Mentions légales</a>
-        <a href="#" id="manage-cookies">Gérer les cookies</a>
-        <a href="renseignement.html">Contact</a>
-      </div>        
-    </div>
-  </footer>
-
-  <script src="main.js" defer></script>
-  <script src="load-header.js" defer></script>  
-  <script src="./consent-manager.js" defer></script>
-  
-  
+<body class="page-presentation" data-tagline="Présentation">
+<!-- HEADER injecté (identique aux autres pages) -->
+<div id="site-header"></div>
+<main class="ci-about-page">
+<section class="ci-about-hero-v2">
+<div class="container ci-about-hero-grid-v2">
+<div class="ci-about-main">
+<p class="ci-section-label">Présentation</p>
+<h1>Une culture industrielle au service de projets mieux préparés.</h1>
+<p class="ci-about-lead-v2">Clain Implantation est un bureau d’études indépendant fondé sur une formation en génie industriel et une expérience acquise au contact de la recherche, de la production et des projets d’investissement.</p>
+<p>L’intervention se situe principalement en amont des travaux : comprendre l’existant, représenter les contraintes et fournir aux décideurs une base technique suffisamment claire pour engager la suite du projet.</p>
+<div class="v2-actions ci-about-actions">
+<a class="v2-btn v2-btn-primary" href="prestations.html">Voir les prestations</a>
+<a class="v2-btn v2-btn-secondary" href="renseignement.html">Nous contacter</a>
+</div>
+</div>
+<aside class="ci-about-identity-card">
+<span>Ingénierie indépendante</span>
+<strong>Un regard terrain, une lecture technique, une restitution claire.</strong>
+<ul>
+<li>Génie industriel</li>
+<li>Implantation &amp; flux</li>
+<li>BIM &amp; modélisation</li>
+<li>Accompagnement de projet</li>
+</ul>
+</aside>
+</div>
+</section>
+<section class="ci-founder has-section-visual visual-dark">
+<div aria-hidden="true" class="ci-section-visual bg-bureau-ingenieur"></div>
+<div class="container ci-founder-grid">
+<div class="ci-founder-title">
+<p class="ci-section-label">Parcours</p>
+<h2>Une expérience construite entre recherche, production et investissements industriels.</h2>
+</div>
+<div class="ci-founder-panel">
+<p>Derrière Clain Implantation, il y a un parcours en génie industriel développé dans des environnements variés : automobile, agroalimentaire, centre de recherche, sites de production européens et installations spécialisées.</p>
+<p>Les missions réalisées ont porté sur des sujets concrets : essais et plans d’expérience, conception de prototypes, industrialisation, mise en service de lignes, analyse de procédés, optimisation d’espaces et amélioration des flux.</p>
+<p>Cette expérience se poursuit aujourd’hui dans le pilotage de projets d’investissement et de travaux neufs, avec la coordination d’acteurs internes et externes autour d’opérations pouvant représenter plusieurs millions d’euros.</p>
+<p>Ce parcours apporte une lecture transversale du projet : relier les besoins de l’exploitation, les possibilités techniques, les contraintes du terrain et la qualité des informations nécessaires à une décision responsable.</p>
+<div class="ci-founder-proof">
+<div>
+<span>Recherche</span>
+<strong>Plans d’expérience · essais · prototypes</strong>
+</div>
+<div>
+<span>Production</span>
+<strong>Industrialisation · lignes · contraintes terrain</strong>
+</div>
+<div>
+<span>Projet</span>
+<strong>Investissements · consultations · travaux neufs</strong>
+</div>
+<div>
+<span>Numérique</span>
+<strong>Relevés · DAO · BIM · modélisation 3D</strong>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="ci-about-paper">
+<div class="container ci-about-paper-grid">
+<div class="ci-about-paper-title">
+<p class="ci-section-label dark">Lecture du projet</p>
+<h2>Deux espaces similaires peuvent imposer deux solutions opposées.</h2>
+</div>
+<div class="ci-about-mission-cards">
+<article>
+<span>01</span>
+<h3>Le site</h3>
+<p>Structure, niveaux, accès, réseaux, voisinage, environnement réglementaire et possibilités réelles de modification.</p>
+</article>
+<article>
+<span>02</span>
+<h3>Les usages</h3>
+<p>Flux de personnes et de matières, ergonomie, sécurité, nettoyage, maintenance et continuité d’exploitation.</p>
+</article>
+<article>
+<span>03</span>
+<h3>La trajectoire</h3>
+<p>Budget, planning, travaux préparatoires, capacité d’évolution et compatibilité avec les étapes futures du projet.</p>
+</article>
+</div>
+<div class="ci-about-mission-wide">
+<p>Une implantation ne se lit pas seulement à travers une surface disponible. La hauteur, les accès, la structure, les réseaux et les conditions d’exploitation peuvent transformer complètement la faisabilité d’une solution.</p>
+<p>Deux projets visuellement proches peuvent ainsi entraîner des besoins très différents en manutention, raccordement, protection, maintenance, autorisation, phasage ou investissement.</p>
+<p>Le rôle de l’étude est de rendre ces écarts visibles assez tôt, afin d’écarter les hypothèses fragiles et de concentrer les échanges sur des options compatibles avec le contexte réel.</p>
+</div>
+<div class="ci-about-project-comparison">
+<figure>
+<img alt="Premier projet de pont étudié dans son contexte technique" loading="eager" src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Fond%20de%20page/Pont.png"/>
+<figcaption>Projet A</figcaption>
+</figure>
+<span aria-hidden="true" class="ci-about-project-difference">≠</span>
+<figure>
+<img alt="Second projet de pont présentant des contraintes différentes" loading="eager" src="https://pub-c20addfc81634cb1a4f45d1dbb9c49f4.r2.dev/images/Fond%20de%20page/Pont%20xl.png"/>
+<figcaption>Projet B</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="ci-about-network">
+<div class="container ci-about-network-grid">
+<div class="ci-about-network-title">
+<p class="ci-section-label">Organisation</p>
+<h2>Une expertise centrale, des spécialistes au besoin.</h2>
+</div>
+<div class="ci-about-network-panel">
+<p>Clain Implantation reste une structure indépendante : le client échange directement avec la personne qui analyse les données, développe les scénarios et produit les supports.</p>
+<p>Selon la nature du sujet, des compétences complémentaires peuvent être associées : structure, procédés, fluides, maintenance, travaux, réglementation ou expertise métier spécifique.</p>
+<p>Cette organisation maintient une vision continue du projet tout en permettant d’approfondir les points qui exigent une validation ou un savoir-faire spécialisé.</p>
+</div>
+</div>
+</section>
+<section class="ci-about-sectors">
+<div class="container">
+<div class="ci-block-head">
+<p class="ci-section-label dark">Contextes d’intervention</p>
+<h2>Des outils transposables à plusieurs environnements.</h2>
+<p>Les principes restent communs — mesurer, représenter, analyser — mais les critères étudiés sont adaptés aux usages et aux risques propres à chaque activité.</p>
+</div>
+<div class="ci-about-sector-grid">
+<article>
+<span>01</span>
+<h3>Industrie &amp; production</h3>
+<p>Équipements, lignes, ateliers, utilités, zones techniques, stockage, flux et préparation de projets d’investissement.</p>
+</article>
+<article>
+<span>02</span>
+<h3>PME, ateliers &amp; artisanat</h3>
+<p>Organisation de locaux, évolution des postes de travail, contraintes d’accès, ergonomie, capacité et développement de l’activité.</p>
+</article>
+<article>
+<span>03</span>
+<h3>Espaces &amp; projets immobiliers</h3>
+<p>Relevé de l’existant, projection 2D/3D, compréhension des volumes et supports visuels pour préparer un aménagement ou des travaux.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="ci-about-workflow has-section-visual visual-dark">
+<div aria-hidden="true" class="ci-section-visual bg-table-architecte"></div>
+<div class="container ci-about-workflow-grid">
+<div>
+<p class="ci-section-label">Environnement numérique</p>
+<h2>Des outils choisis selon la précision réellement utile.</h2>
+</div>
+<div class="ci-about-steps">
+<article>
+<span>01</span>
+<h3>Relevé &amp; acquisition</h3>
+<p>Plans existants, photographies, mesures terrain ou scan 3D constituent la matière première de la représentation numérique.</p>
+</article>
+<article>
+<span>02</span>
+<h3>DAO 2D</h3>
+<p>Les plans cotés, coupes et schémas permettent de contrôler rapidement dimensions, circulations et zones fonctionnelles.</p>
+</article>
+<article>
+<span>03</span>
+<h3>Maquette 3D / BIM</h3>
+<p>Les volumes et objets sont structurés dans une maquette mesurable pour étudier les interfaces et faire évoluer les scénarios.</p>
+</article>
+<article>
+<span>04</span>
+<h3>Rendus &amp; restitution</h3>
+<p>Vues techniques ou réalistes, annotations et synthèses rendent les conclusions accessibles aux décideurs et aux partenaires.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="ci-about-cta-v2">
+<div class="container">
+<div class="ci-about-cta-card-v2">
+<p class="ci-section-label">Échanger</p>
+<h2>Vous souhaitez confronter une idée au terrain ?</h2>
+<p>Présentez le site, l’équipement ou l’aménagement envisagé. Le premier échange permettra de préciser les données nécessaires et le bon niveau d’étude.</p>
+<a class="v2-btn v2-btn-primary" href="renseignement.html">Présenter mon contexte</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<small>© <span id="year"></span> Clain Implantation</small>
+<div class="footer-links">
+<a href="mentions-legales.html">Mentions légales</a>
+<a href="#" id="manage-cookies">Gérer les cookies</a>
+<a href="renseignement.html">Contact</a>
+</div>
+</div>
+</footer>
+<script defer="" src="main.js"></script>
+<script defer="" src="load-header.js"></script>
+<script defer="" src="./consent-manager.js"></script>
 </body>
 </html>
